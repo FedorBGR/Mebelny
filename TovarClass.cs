@@ -52,7 +52,7 @@ namespace Mebelny
         {
             try
             {
-                msCommand.CommandText = "UPDATE tovar SET tovar_name = '" + tovar_name + "', tovar_col = '" + tovar_col + "', tovar_cena = '" + tovar_cena + "', tovar_postav = '" + tovar_postav + "' WHERE(id_tovar = '" + id_tovar + "')";
+                msCommand.CommandText = "UPDATE tovar SET tovar_name = '" + tovar_name + "', tovar_col = '" + tovar_col + "', tovar_cena = '" + tovar_cena + "', tovar_postav = '" + tovar_postav + "' WHERE id_tovar = '" + id_tovar + "'";
               
                 if (msCommand.ExecuteNonQuery() > 0)
                 {

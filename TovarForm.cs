@@ -73,18 +73,18 @@ namespace Mebelny
         }
 
        
-
+        static public string EditTovarName1, EditTovarName2, EditTovarCol1, EditTovarCol2, EditTovarCena1, EditTovarCena2, EditTovarPostav1, EditTovarPostav2,EditTovarId1, EditTovarId2;
         private void button_izm_Click(object sender, EventArgs e)
         {
             EditTovarId1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             EditTovarId2 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarName1 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            EditTovarName1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             EditTovarName2 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            EditTovarCol1 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            EditTovarCol1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             EditTovarCol2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            EditTovarCena1 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            EditTovarCena1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             EditTovarCena2 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            EditTovarPostav1 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            EditTovarPostav1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             EditTovarPostav2 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
 
             textBox_id.Text = EditTovarId2;
@@ -99,7 +99,7 @@ namespace Mebelny
            
         }
         
-        static public string EditTovarName1, EditTovarName2, EditTovarCol1, EditTovarCol2, EditTovarCena1, EditTovarCena2, EditTovarPostav1, EditTovarPostav2,EditTovarId1, EditTovarId2;
+        
 
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace Mebelny
                 {
                     if (textBox_name.Text != "" && textBox_col.Text != "" && textBox_cena.Text != "" && textBox_postav.Text != "" && textBox_id.Text != "")
                     {
-                        if (TovarClass.EditTovar(int.Parse(EditTovarId2), EditTovarName2, int.Parse(EditTovarCol2), int.Parse(EditTovarCena2), EditTovarPostav2))
+                        if (TovarClass.EditTovar(int.Parse(EditTovarId1), EditTovarName1, int.Parse(EditTovarCol1), int.Parse(EditTovarCena1), EditTovarPostav1))
                         {
                             MessageBox.Show("Данные товара успешно изменены", "Данные изменены", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             TovarClass.GetTovar();
