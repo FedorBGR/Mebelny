@@ -72,30 +72,25 @@ namespace Mebelny
             dataGridView1.DataSource = TovarClass.dtTovar;
         }
 
-       
-        static public string EditTovarName1, EditTovarName2, EditTovarCol1, EditTovarCol2, EditTovarCena1, EditTovarCena2, EditTovarPostav1, EditTovarPostav2,EditTovarId1, EditTovarId2;
+
+        static public string EditId, EditName, EditCol, EditCena, EditPostav;
         private void button_izm_Click(object sender, EventArgs e)
         {
-            EditTovarId1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarId2 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarName1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarName2 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            EditTovarCol1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarCol2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            EditTovarCena1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarCena2 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            EditTovarPostav1 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            EditTovarPostav2 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            EditId = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            EditName = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            EditCol = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            EditCena = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            EditPostav = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            
+            textBox_id.Text = EditId;
 
-            textBox_id.Text = EditTovarId2;
-            
-            textBox_name.Text = EditTovarName2;
+            textBox_name.Text = EditName;
            
-            textBox_col.Text = EditTovarCol2;
+            textBox_col.Text = EditCol;
            
-            textBox_cena.Text = EditTovarCena2;
+            textBox_cena.Text = EditCena;
             
-            textBox_postav.Text = EditTovarPostav2;
+            textBox_postav.Text = EditPostav;
            
         }
         
@@ -103,11 +98,16 @@ namespace Mebelny
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            if(textBox_name.Text == EditTovarName1 && textBox_col.Text == EditTovarCol1 && textBox_cena.Text == EditTovarCena1 && textBox_postav.Text == EditTovarPostav1 && textBox_id.Text == EditTovarId1)
+            if(textBox_name.Text == EditName && textBox_col.Text == EditCol && textBox_cena.Text == EditCena && textBox_postav.Text == EditPostav)
             {
-                if (textBox_name.Text != "" && textBox_col.Text != "" && textBox_cena.Text != "" && textBox_postav.Text != "" && textBox_id.Text != "")
+                if (textBox_name.Text != "" && textBox_col.Text != "" && textBox_cena.Text != "" && textBox_postav.Text != "")
                 {
-                    if(TovarClass.EditTovar(int.Parse(EditTovarId1), EditTovarName1, int.Parse(EditTovarCol1), int.Parse(EditTovarCena1), EditTovarPostav1))
+                    EditId = textBox_id.Text;
+                    EditName = textBox_name.Text;
+                    EditCol = textBox_col.Text;
+                    EditPostav= textBox_postav.Text;
+                    EditCena= textBox_cena.Text;
+                    if(TovarClass.EditTovar(int.Parse(textBox_id.Text), textBox_name.Text, int.Parse(textBox_col.Text), int.Parse(textBox_cena.Text), textBox_postav.Text))
                     {
                     MessageBox.Show("Данные товара успешно изменены", "Данные изменены",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TovarClass.GetTovar();
@@ -130,12 +130,10 @@ namespace Mebelny
             }
             else
             {
-                string sql = @"SELECT id_tovar FROM tovar WHERE tovar_name = '" + textBox_name.Text + "'";
-                DBconnection.msCommand.CommandText= sql;
-                Object result = DBconnection.msCommand.ExecuteScalar();
-                if (result != null)
+                if(TovarClass.EditTovar(int.Parse(textBox_id.Text), textBox_name.Text, int.Parse(textBox_col.Text), int.Parse(textBox_cena.Text), textBox_postav.Text))
                 {
-                    MessageBox.Show("Такой товар уже есть в базе!", "Дубликат записи", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Данные товара успешно изменены", "Данные изменены", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TovarClass.GetTovar();
                     textBox_cena.Text = "";
                     textBox_col.Text = "";
                     textBox_id.Text = "";
@@ -145,9 +143,14 @@ namespace Mebelny
                 }
                 else
                 {
-                    if (textBox_name.Text != "" && textBox_col.Text != "" && textBox_cena.Text != "" && textBox_postav.Text != "" && textBox_id.Text != "")
+                    if (textBox_name.Text != "" && textBox_col.Text != "" && textBox_cena.Text != "" && textBox_postav.Text != "")
                     {
-                        if (TovarClass.EditTovar(int.Parse(EditTovarId1), EditTovarName1, int.Parse(EditTovarCol1), int.Parse(EditTovarCena1), EditTovarPostav1))
+                        EditId = textBox_id.Text;
+                        EditName = textBox_name.Text;
+                        EditCol = textBox_col.Text;
+                        EditPostav = textBox_postav.Text;
+                        EditCena = textBox_cena.Text;
+                        if (TovarClass.EditTovar(int.Parse(textBox_id.Text), textBox_name.Text, int.Parse(textBox_col.Text), int.Parse(textBox_cena.Text), textBox_postav.Text))
                         {
                             MessageBox.Show("Данные товара успешно изменены", "Данные изменены", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             TovarClass.GetTovar();
