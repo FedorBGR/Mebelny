@@ -47,6 +47,8 @@
             this.label_cena = new System.Windows.Forms.Label();
             this.label_postav = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_search = new System.Windows.Forms.Button();
+            this.button_reload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             // 
             // textBox_Search
             // 
-            this.textBox_Search.Location = new System.Drawing.Point(1067, 65);
+            this.textBox_Search.Location = new System.Drawing.Point(989, 65);
             this.textBox_Search.Name = "textBox_Search";
             this.textBox_Search.Size = new System.Drawing.Size(185, 20);
             this.textBox_Search.TabIndex = 2;
@@ -145,6 +147,7 @@
             this.button_deletetovar.TabIndex = 11;
             this.button_deletetovar.Text = "Удалить товар";
             this.button_deletetovar.UseVisualStyleBackColor = true;
+            this.button_deletetovar.Click += new System.EventHandler(this.button_deletetovar_Click);
             // 
             // button_izm
             // 
@@ -229,11 +232,33 @@
             this.dataGridView1.Size = new System.Drawing.Size(547, 283);
             this.dataGridView1.TabIndex = 19;
             // 
+            // button_search
+            // 
+            this.button_search.Location = new System.Drawing.Point(1180, 51);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(49, 46);
+            this.button_search.TabIndex = 20;
+            this.button_search.Text = "Поиск";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
+            // button_reload
+            // 
+            this.button_reload.Location = new System.Drawing.Point(989, 118);
+            this.button_reload.Name = "button_reload";
+            this.button_reload.Size = new System.Drawing.Size(240, 29);
+            this.button_reload.TabIndex = 21;
+            this.button_reload.Text = "Показать все данные";
+            this.button_reload.UseVisualStyleBackColor = true;
+            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
+            // 
             // TovarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.button_reload);
+            this.Controls.Add(this.button_search);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_postav);
             this.Controls.Add(this.label_cena);
@@ -284,5 +309,7 @@
         private System.Windows.Forms.Label label_cena;
         private System.Windows.Forms.Label label_postav;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.Button button_reload;
     }
 }

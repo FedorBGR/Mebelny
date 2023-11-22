@@ -18,6 +18,19 @@ namespace Mebelny
             InitializeComponent();
         }
 
+        private void ReloadForm()
+        {   
+            TovarClass.GetTovar();
+            dataGridView1.DataSource = TovarClass.dtTovar;
+            textBox_cena.Text = "";
+            textBox_col.Text = "";
+            textBox_id.Text = "";
+            textBox_name.Text = "";
+            textBox_postav.Text = "";
+            textBox_Search.Text = "";
+            
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -74,6 +87,67 @@ namespace Mebelny
 
 
         static public string EditId, EditName, EditCol, EditCena, EditPostav;
+
+        
+        // показать все данные
+        private void button_reload_Click(object sender, EventArgs e)
+        {
+            ReloadForm();
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(textBox_Search.Text != "")
+                {
+                    string tovarSearch = textBox_Search.Text;
+                    TovarClass.searchTovar(tovarSearch);
+
+                    if (dataGridView1.RowCount == 0)
+                    {
+                         MessageBox.Show("Совпадений не найдено, возможно вы допустили ошибку", "Товар не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox_Search.Text = "";
+                        TovarClass.GetTovar();
+                    }
+                    
+                       
+                }
+                
+                else
+                {
+                    MessageBox.Show("Введите данные в поле поиска", "Нет данных для поиска", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при поиске", "Search ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void button_deletetovar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string delete = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                DialogResult del = MessageBox.Show("Вы действительно хотите удалить товар?", "Подтвердите удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (del == DialogResult.Yes)
+                {
+                    TovarClass.deleteTovar(delete);
+                    TovarClass.GetTovar();
+                    dataGridView1.DataSource= TovarClass.dtTovar;
+                    MessageBox.Show("Товар удален", "Удаление завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch 
+            {
+            MessageBox.Show("Ошибка при удалении", "Не удалось удалить запись", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         private void button_izm_Click(object sender, EventArgs e)
         {
             EditId = dataGridView1.CurrentRow.Cells[0].Value.ToString();

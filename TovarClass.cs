@@ -82,5 +82,20 @@ namespace Mebelny
                 MessageBox.Show("Ошибка при удалении выбранной записи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        static public void searchTovar (string tovarSearch)
+        {
+            try
+            {
+                msCommand.CommandText = @"SELECT * FROM tovar WHERE concat (tovar_name, tovar_postav) LIKE '%" + tovarSearch + "%'";
+                dtTovar.Clear();
+                msDataAdapter.SelectCommand = DBconnection.msCommand;
+                msDataAdapter.Fill(dtTovar);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при поиске товара", "Ошибка поиска", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
