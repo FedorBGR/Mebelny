@@ -50,7 +50,7 @@ namespace Mebelny
                     case "Продавец":
                         {
                             loginActive = textBox1.Text;
-                            whois = "Администратор";
+                            whois = "Продавец";
                             Autorization.User = textBox1.Text;
                             MessageBox.Show("Добро пожаловать в меню продаваца", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
