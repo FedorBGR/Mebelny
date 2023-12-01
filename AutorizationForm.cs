@@ -28,7 +28,7 @@ namespace Mebelny
         {
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                Autorization.Autorization1(textBox1.Text, textBox2.Text);
+                Autorization.Autorization1(textBox1.Text.Trim(), textBox2.Text.Trim());
                 switch (Autorization.Role)
                 {
                     case null:
@@ -38,9 +38,9 @@ namespace Mebelny
                         }
                     case "Администратор":
                         {
-                            loginActive = textBox1.Text;
+                            loginActive = textBox1.Text.Trim();
                             whois = "Администратор";
-                            Autorization.User = textBox1.Text;
+                            Autorization.User = textBox1.Text.Trim();
                             MessageBox.Show("Добро пожаловать в меню администратора", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
                             AdminForm admin = new AdminForm();
@@ -49,10 +49,10 @@ namespace Mebelny
                         }
                     case "Продавец":
                         {
-                            loginActive = textBox1.Text;
+                            loginActive = textBox1.Text.Trim();
                             whois = "Продавец";
-                            Autorization.User = textBox1.Text;
-                            MessageBox.Show("Добро пожаловать в меню продаваца", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Autorization.User = textBox1.Text.Trim();
+                            MessageBox.Show("Добро пожаловать в меню продавца", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
                             EmplForm empl = new EmplForm();
                             empl.Show();
@@ -62,7 +62,7 @@ namespace Mebelny
             }
             else
             {
-                MessageBox.Show("Заполните все полня!", "Заполнение полей", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Заполните все поля!", "Заполнение полей", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

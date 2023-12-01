@@ -23,7 +23,7 @@ namespace Mebelny
             }
             catch 
             {
-            MessageBox.Show("Ошибка при ролучкнии данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Ошибка при получении данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button_tovary = new System.Windows.Forms.Button();
+            this.button_zakazy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -44,18 +45,30 @@
             // 
             // button_tovary
             // 
-            this.button_tovary.Location = new System.Drawing.Point(29, 23);
+            this.button_tovary.Location = new System.Drawing.Point(25, 22);
             this.button_tovary.Name = "button_tovary";
             this.button_tovary.Size = new System.Drawing.Size(86, 47);
             this.button_tovary.TabIndex = 2;
             this.button_tovary.Text = "Товары";
             this.button_tovary.UseVisualStyleBackColor = true;
+            this.button_tovary.Click += new System.EventHandler(this.button_tovary_Click);
+            // 
+            // button_zakazy
+            // 
+            this.button_zakazy.Location = new System.Drawing.Point(253, 22);
+            this.button_zakazy.Name = "button_zakazy";
+            this.button_zakazy.Size = new System.Drawing.Size(86, 47);
+            this.button_zakazy.TabIndex = 3;
+            this.button_zakazy.Text = "Заказы";
+            this.button_zakazy.UseVisualStyleBackColor = true;
+            this.button_zakazy.Click += new System.EventHandler(this.button_zakazy_Click);
             // 
             // EmplForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.button_zakazy);
             this.Controls.Add(this.button_tovary);
             this.Controls.Add(this.button1);
             this.Name = "EmplForm";
@@ -69,5 +82,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_tovary;
+        private System.Windows.Forms.Button button_zakazy;
     }
 }

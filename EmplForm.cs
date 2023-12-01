@@ -23,6 +23,20 @@ namespace Mebelny
             AutorizationForm form = new AutorizationForm();
             form.Show();
         }
+
+        private void button_tovary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TovarEmpForm tovaremp = new TovarEmpForm();
+            tovaremp.Show();
+        }
+
+        private void button_zakazy_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Zakaz1Form zakaz1= new Zakaz1Form();
+            zakaz1.Show();
+        }
     }
     }
 
