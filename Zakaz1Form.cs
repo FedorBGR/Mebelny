@@ -81,6 +81,7 @@ namespace Mebelny
                                     {
                     MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ZakazClass.GetZakaz();
+                    textBox_cena_zakaza.Text = "";
                     comboBox_id_tovar.Text = "";
                     textBox_client_name.Text = "";
                     textBox_client_surname.Text = "";
