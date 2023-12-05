@@ -49,6 +49,8 @@
             this.comboBox_satus = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button_addZakaz = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button_izm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,7 +226,7 @@
             this.comboBox_satus.FormattingEnabled = true;
             this.comboBox_satus.Items.AddRange(new object[] {
             "Сборка",
-            "Отпарвка",
+            "Отправка",
             "Отправлен",
             "Доставлен"});
             this.comboBox_satus.Location = new System.Drawing.Point(694, 502);
@@ -244,7 +246,7 @@
             // 
             // button_addZakaz
             // 
-            this.button_addZakaz.Location = new System.Drawing.Point(208, 613);
+            this.button_addZakaz.Location = new System.Drawing.Point(67, 613);
             this.button_addZakaz.Name = "button_addZakaz";
             this.button_addZakaz.Size = new System.Drawing.Size(235, 39);
             this.button_addZakaz.TabIndex = 61;
@@ -252,11 +254,33 @@
             this.button_addZakaz.UseVisualStyleBackColor = true;
             this.button_addZakaz.Click += new System.EventHandler(this.button_addZakaz_Click);
             // 
+            // button_save
+            // 
+            this.button_save.Location = new System.Drawing.Point(673, 613);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(235, 39);
+            this.button_save.TabIndex = 63;
+            this.button_save.Text = "Сохроанить";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // button_izm
+            // 
+            this.button_izm.Location = new System.Drawing.Point(369, 613);
+            this.button_izm.Name = "button_izm";
+            this.button_izm.Size = new System.Drawing.Size(235, 39);
+            this.button_izm.TabIndex = 62;
+            this.button_izm.Text = "Изменить данные";
+            this.button_izm.UseVisualStyleBackColor = true;
+            this.button_izm.Click += new System.EventHandler(this.button_izm_Click);
+            // 
             // Zakaz1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.button_izm);
             this.Controls.Add(this.button_addZakaz);
             this.Controls.Add(this.comboBox_satus);
             this.Controls.Add(this.label8);
@@ -310,5 +334,7 @@
         private System.Windows.Forms.ComboBox comboBox_satus;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button_addZakaz;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_izm;
     }
 }
