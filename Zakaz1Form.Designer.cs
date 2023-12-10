@@ -90,7 +90,7 @@
             // 
             // textBox_id_zakaz
             // 
-            this.textBox_id_zakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_id_zakaz.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_id_zakaz.Location = new System.Drawing.Point(527, 567);
             this.textBox_id_zakaz.Multiline = true;
             this.textBox_id_zakaz.Name = "textBox_id_zakaz";
@@ -109,7 +109,7 @@
             // 
             // textBox_client_name
             // 
-            this.textBox_client_name.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_client_name.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_client_name.Location = new System.Drawing.Point(527, 672);
             this.textBox_client_name.Multiline = true;
             this.textBox_client_name.Name = "textBox_client_name";
@@ -130,11 +130,11 @@
             // comboBox_id_tovar
             // 
             this.comboBox_id_tovar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox_id_tovar.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_id_tovar.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_id_tovar.FormattingEnabled = true;
             this.comboBox_id_tovar.Location = new System.Drawing.Point(527, 616);
             this.comboBox_id_tovar.Name = "comboBox_id_tovar";
-            this.comboBox_id_tovar.Size = new System.Drawing.Size(258, 41);
+            this.comboBox_id_tovar.Size = new System.Drawing.Size(258, 34);
             this.comboBox_id_tovar.TabIndex = 47;
             // 
             // label2
@@ -149,7 +149,7 @@
             // 
             // textBox_client_surname
             // 
-            this.textBox_client_surname.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_client_surname.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_client_surname.Location = new System.Drawing.Point(527, 730);
             this.textBox_client_surname.Multiline = true;
             this.textBox_client_surname.Name = "textBox_client_surname";
@@ -168,7 +168,7 @@
             // 
             // textBox_client_otch
             // 
-            this.textBox_client_otch.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_client_otch.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_client_otch.Location = new System.Drawing.Point(527, 783);
             this.textBox_client_otch.Multiline = true;
             this.textBox_client_otch.Name = "textBox_client_otch";
@@ -187,7 +187,7 @@
             // 
             // textBox_cena_zakaza
             // 
-            this.textBox_cena_zakaza.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_cena_zakaza.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_cena_zakaza.Location = new System.Drawing.Point(1013, 568);
             this.textBox_cena_zakaza.Multiline = true;
             this.textBox_cena_zakaza.Name = "textBox_cena_zakaza";
@@ -206,7 +206,7 @@
             // 
             // textBox_zakaz_col
             // 
-            this.textBox_zakaz_col.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_zakaz_col.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_zakaz_col.Location = new System.Drawing.Point(1013, 619);
             this.textBox_zakaz_col.Multiline = true;
             this.textBox_zakaz_col.Name = "textBox_zakaz_col";
@@ -238,11 +238,11 @@
             // comboBox_Id_user
             // 
             this.comboBox_Id_user.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox_Id_user.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_Id_user.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_Id_user.FormattingEnabled = true;
             this.comboBox_Id_user.Location = new System.Drawing.Point(1013, 664);
             this.comboBox_Id_user.Name = "comboBox_Id_user";
-            this.comboBox_Id_user.Size = new System.Drawing.Size(258, 41);
+            this.comboBox_Id_user.Size = new System.Drawing.Size(258, 34);
             this.comboBox_Id_user.TabIndex = 58;
             // 
             // label8
@@ -258,7 +258,7 @@
             // comboBox_satus
             // 
             this.comboBox_satus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox_satus.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_satus.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_satus.FormattingEnabled = true;
             this.comboBox_satus.Items.AddRange(new object[] {
             "Сборка",
@@ -267,7 +267,7 @@
             "Доставлен"});
             this.comboBox_satus.Location = new System.Drawing.Point(1013, 722);
             this.comboBox_satus.Name = "comboBox_satus";
-            this.comboBox_satus.Size = new System.Drawing.Size(258, 41);
+            this.comboBox_satus.Size = new System.Drawing.Size(258, 34);
             this.comboBox_satus.TabIndex = 60;
             // 
             // button_addZakaz

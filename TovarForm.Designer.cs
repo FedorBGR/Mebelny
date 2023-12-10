@@ -90,7 +90,7 @@
             // 
             // textBox_id
             // 
-            this.textBox_id.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_id.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_id.Location = new System.Drawing.Point(520, 583);
             this.textBox_id.Multiline = true;
             this.textBox_id.Name = "textBox_id";
@@ -99,7 +99,7 @@
             // 
             // textBox_name
             // 
-            this.textBox_name.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_name.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_name.Location = new System.Drawing.Point(520, 632);
             this.textBox_name.Multiline = true;
             this.textBox_name.Name = "textBox_name";
@@ -108,7 +108,7 @@
             // 
             // textBox_col
             // 
-            this.textBox_col.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_col.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_col.Location = new System.Drawing.Point(520, 685);
             this.textBox_col.Multiline = true;
             this.textBox_col.Name = "textBox_col";
@@ -117,7 +117,7 @@
             // 
             // textBox_cena
             // 
-            this.textBox_cena.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_cena.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_cena.Location = new System.Drawing.Point(520, 736);
             this.textBox_cena.Multiline = true;
             this.textBox_cena.Name = "textBox_cena";
@@ -126,7 +126,7 @@
             // 
             // textBox_postav
             // 
-            this.textBox_postav.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_postav.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_postav.Location = new System.Drawing.Point(520, 793);
             this.textBox_postav.Multiline = true;
             this.textBox_postav.Name = "textBox_postav";
