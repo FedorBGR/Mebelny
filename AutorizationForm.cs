@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using Application = System.Windows.Forms.Application;
 
 namespace Mebelny
 {
@@ -23,6 +25,7 @@ namespace Mebelny
         private void Form1_Load(object sender, EventArgs e)
         {
             DBconnection.ConnectionDB();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,20 +77,23 @@ namespace Mebelny
 
         private void AutorizationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (close == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            if (close == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+
+            Application.Exit();
         }
 
         private void AutorizationForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button_hide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

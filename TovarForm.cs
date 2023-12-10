@@ -81,6 +81,9 @@ namespace Mebelny
 
         private void TovarForm_Load(object sender, EventArgs e)
         {
+            
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized; 
             TovarClass.GetTovar();
             dataGridView1.DataSource = TovarClass.dtTovar;
         }
@@ -97,15 +100,24 @@ namespace Mebelny
 
         private void TovarForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (close == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            if (close == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            Application.Exit();
+        }
+
+        private void button_toAut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AutorizationForm Aut = new AutorizationForm();
+            Aut.Show();
+        }
+
+        private void button_hide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void button_search_Click(object sender, EventArgs e)

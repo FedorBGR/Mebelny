@@ -115,6 +115,24 @@ namespace Mebelny
         }
         static public string Idzakaz, Idtovar, ClientName, ClientSurname, ClientOthc, CenaZakaz, ZakazCol, IdEmpl, ZakazStatus;
 
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button_hide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void button_toAut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AutorizationForm Aut = new AutorizationForm();
+            Aut.Show();
+        }
+
         private void DataIntoComboxIdTovar()
         {
             string sql = @"SELECT id_tovar FROM tovar";
@@ -142,6 +160,9 @@ namespace Mebelny
         }
         private void Zakaz2Form_Load(object sender, EventArgs e)
         {
+            
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
             DataIntoComboxIdTovar();
             DataIntoComboxIdEMpl();
             ZakazClass.GetZakaz();
@@ -150,15 +171,7 @@ namespace Mebelny
 
         private void Zakaz2Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (close == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            if (close == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            Application.Exit();
         }
 
         private void button_deletezakaz_Click(object sender, EventArgs e)

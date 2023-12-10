@@ -32,6 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button_tovary = new System.Windows.Forms.Button();
             this.button_zakazy = new System.Windows.Forms.Button();
+            this.button_hide = new System.Windows.Forms.Button();
+            this.button_close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -77,11 +79,43 @@
             this.button_zakazy.UseVisualStyleBackColor = true;
             this.button_zakazy.Click += new System.EventHandler(this.button_zakazy_Click);
             // 
+            // button_hide
+            // 
+            this.button_hide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_hide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_hide.BackgroundImage")));
+            this.button_hide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_hide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_hide.FlatAppearance.BorderSize = 0;
+            this.button_hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_hide.Location = new System.Drawing.Point(200, 12);
+            this.button_hide.Name = "button_hide";
+            this.button_hide.Size = new System.Drawing.Size(35, 35);
+            this.button_hide.TabIndex = 102;
+            this.button_hide.UseVisualStyleBackColor = true;
+            this.button_hide.Click += new System.EventHandler(this.button_hide_Click);
+            // 
+            // button_close
+            // 
+            this.button_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_close.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_close.BackgroundImage")));
+            this.button_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_close.FlatAppearance.BorderSize = 0;
+            this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_close.Location = new System.Drawing.Point(241, 12);
+            this.button_close.Name = "button_close";
+            this.button_close.Size = new System.Drawing.Size(35, 35);
+            this.button_close.TabIndex = 101;
+            this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
+            // 
             // EmplForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 276);
+            this.Controls.Add(this.button_hide);
+            this.Controls.Add(this.button_close);
             this.Controls.Add(this.button_zakazy);
             this.Controls.Add(this.button_tovary);
             this.Controls.Add(this.button1);
@@ -89,6 +123,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmplForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmplForm_FormClosing);
+            this.Load += new System.EventHandler(this.EmplForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -98,5 +133,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_tovary;
         private System.Windows.Forms.Button button_zakazy;
+        private System.Windows.Forms.Button button_hide;
+        private System.Windows.Forms.Button button_close;
     }
 }

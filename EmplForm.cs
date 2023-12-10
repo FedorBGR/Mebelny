@@ -40,15 +40,22 @@ namespace Mebelny
 
         private void EmplForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (close == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            if (close == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            Application.Exit();
+        }
+
+        private void EmplForm_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void button_hide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     }
