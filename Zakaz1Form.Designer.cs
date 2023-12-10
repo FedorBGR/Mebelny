@@ -28,39 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zakaz1Form));
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox_id_zakaz = new System.Windows.Forms.TextBox();
             this.label_id = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox_client_name = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox_id_tovar = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox_client_surname = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBox_client_otch = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox_cena_zakaza = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox_zakaz_col = new System.Windows.Forms.TextBox();
-            this.comboBox_Id_user = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_satus = new System.Windows.Forms.ComboBox();
+            this.comboBox_Id_user = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboBox_satus = new System.Windows.Forms.ComboBox();
             this.button_addZakaz = new System.Windows.Forms.Button();
-            this.button_save = new System.Windows.Forms.Button();
             this.button_izm = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.textBox_Search = new System.Windows.Forms.TextBox();
+            this.button_search = new System.Windows.Forms.Button();
+            this.button_reload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1144, 628);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 41);
+            this.button1.Size = new System.Drawing.Size(35, 35);
             this.button1.TabIndex = 41;
-            this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -68,7 +77,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Location = new System.Drawing.Point(96, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(348, 250);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.ReadOnly = true;
@@ -78,7 +87,8 @@
             // 
             // textBox_id_zakaz
             // 
-            this.textBox_id_zakaz.Location = new System.Drawing.Point(208, 339);
+            this.textBox_id_zakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_id_zakaz.Location = new System.Drawing.Point(527, 567);
             this.textBox_id_zakaz.Multiline = true;
             this.textBox_id_zakaz.Name = "textBox_id_zakaz";
             this.textBox_id_zakaz.Size = new System.Drawing.Size(258, 25);
@@ -87,166 +97,183 @@
             // label_id
             // 
             this.label_id.AutoSize = true;
-            this.label_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_id.Location = new System.Drawing.Point(98, 339);
+            this.label_id.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_id.Location = new System.Drawing.Point(413, 559);
             this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(104, 25);
+            this.label_id.Size = new System.Drawing.Size(108, 33);
             this.label_id.TabIndex = 44;
             this.label_id.Text = "id заказа";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(98, 394);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 25);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "id товара";
-            // 
             // textBox_client_name
             // 
-            this.textBox_client_name.Location = new System.Drawing.Point(208, 444);
+            this.textBox_client_name.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_client_name.Location = new System.Drawing.Point(527, 672);
             this.textBox_client_name.Multiline = true;
             this.textBox_client_name.Name = "textBox_client_name";
             this.textBox_client_name.Size = new System.Drawing.Size(258, 25);
             this.textBox_client_name.TabIndex = 45;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(408, 619);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 33);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "id товара";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // comboBox_id_tovar
             // 
+            this.comboBox_id_tovar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox_id_tovar.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_id_tovar.FormattingEnabled = true;
-            this.comboBox_id_tovar.Location = new System.Drawing.Point(208, 394);
+            this.comboBox_id_tovar.Location = new System.Drawing.Point(527, 616);
             this.comboBox_id_tovar.Name = "comboBox_id_tovar";
-            this.comboBox_id_tovar.Size = new System.Drawing.Size(258, 21);
+            this.comboBox_id_tovar.Size = new System.Drawing.Size(258, 41);
             this.comboBox_id_tovar.TabIndex = 47;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(62, 444);
+            this.label2.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(372, 668);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 25);
+            this.label2.Size = new System.Drawing.Size(149, 33);
             this.label2.TabIndex = 48;
             this.label2.Text = "Имя клиента";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(11, 502);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 25);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Фамалия клиента";
-            // 
             // textBox_client_surname
             // 
-            this.textBox_client_surname.Location = new System.Drawing.Point(208, 502);
+            this.textBox_client_surname.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_client_surname.Location = new System.Drawing.Point(527, 730);
             this.textBox_client_surname.Multiline = true;
             this.textBox_client_surname.Name = "textBox_client_surname";
             this.textBox_client_surname.Size = new System.Drawing.Size(258, 25);
             this.textBox_client_surname.TabIndex = 49;
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(11, 555);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 25);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "Отчество клиента";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(321, 722);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 33);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Фамалия клиента";
             // 
             // textBox_client_otch
             // 
-            this.textBox_client_otch.Location = new System.Drawing.Point(208, 555);
+            this.textBox_client_otch.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_client_otch.Location = new System.Drawing.Point(527, 783);
             this.textBox_client_otch.Multiline = true;
             this.textBox_client_otch.Name = "textBox_client_otch";
             this.textBox_client_otch.Size = new System.Drawing.Size(258, 25);
             this.textBox_client_otch.TabIndex = 51;
             // 
-            // label5
+            // label4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(549, 339);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 25);
-            this.label5.TabIndex = 54;
-            this.label5.Text = "Цена заказа";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(319, 775);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(202, 33);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Отчество клиента";
             // 
             // textBox_cena_zakaza
             // 
-            this.textBox_cena_zakaza.Location = new System.Drawing.Point(694, 339);
+            this.textBox_cena_zakaza.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_cena_zakaza.Location = new System.Drawing.Point(1013, 568);
             this.textBox_cena_zakaza.Multiline = true;
             this.textBox_cena_zakaza.Name = "textBox_cena_zakaza";
             this.textBox_cena_zakaza.Size = new System.Drawing.Size(258, 25);
             this.textBox_cena_zakaza.TabIndex = 53;
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(559, 388);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 25);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Количество";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(865, 560);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 33);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "Цена заказа";
             // 
             // textBox_zakaz_col
             // 
-            this.textBox_zakaz_col.Location = new System.Drawing.Point(694, 390);
+            this.textBox_zakaz_col.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_zakaz_col.Location = new System.Drawing.Point(1013, 619);
             this.textBox_zakaz_col.Multiline = true;
             this.textBox_zakaz_col.Name = "textBox_zakaz_col";
             this.textBox_zakaz_col.Size = new System.Drawing.Size(258, 25);
             this.textBox_zakaz_col.TabIndex = 55;
             // 
-            // comboBox_Id_user
+            // label6
             // 
-            this.comboBox_Id_user.FormattingEnabled = true;
-            this.comboBox_Id_user.Location = new System.Drawing.Point(694, 444);
-            this.comboBox_Id_user.Name = "comboBox_Id_user";
-            this.comboBox_Id_user.Size = new System.Drawing.Size(258, 21);
-            this.comboBox_Id_user.TabIndex = 58;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(868, 611);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 33);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Количество";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(538, 440);
+            this.label7.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(843, 672);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 25);
+            this.label7.Size = new System.Drawing.Size(163, 33);
             this.label7.TabIndex = 57;
             this.label7.Text = "id сотрудника";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // comboBox_Id_user
+            // 
+            this.comboBox_Id_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox_Id_user.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_Id_user.FormattingEnabled = true;
+            this.comboBox_Id_user.Location = new System.Drawing.Point(1013, 664);
+            this.comboBox_Id_user.Name = "comboBox_Id_user";
+            this.comboBox_Id_user.Size = new System.Drawing.Size(258, 41);
+            this.comboBox_Id_user.TabIndex = 58;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(847, 725);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(160, 33);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Статус заказа";
             // 
             // comboBox_satus
             // 
+            this.comboBox_satus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox_satus.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_satus.FormattingEnabled = true;
             this.comboBox_satus.Items.AddRange(new object[] {
             "Сборка",
             "Отправка",
             "Отправлен",
             "Доставлен"});
-            this.comboBox_satus.Location = new System.Drawing.Point(694, 502);
+            this.comboBox_satus.Location = new System.Drawing.Point(1013, 722);
             this.comboBox_satus.Name = "comboBox_satus";
-            this.comboBox_satus.Size = new System.Drawing.Size(258, 21);
+            this.comboBox_satus.Size = new System.Drawing.Size(258, 41);
             this.comboBox_satus.TabIndex = 60;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(538, 498);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(156, 25);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Статус заказа";
             // 
             // button_addZakaz
             // 
-            this.button_addZakaz.Location = new System.Drawing.Point(67, 613);
+            this.button_addZakaz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_addZakaz.FlatAppearance.BorderSize = 0;
+            this.button_addZakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_addZakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_addZakaz.Location = new System.Drawing.Point(448, 856);
             this.button_addZakaz.Name = "button_addZakaz";
             this.button_addZakaz.Size = new System.Drawing.Size(235, 39);
             this.button_addZakaz.TabIndex = 61;
@@ -254,19 +281,13 @@
             this.button_addZakaz.UseVisualStyleBackColor = true;
             this.button_addZakaz.Click += new System.EventHandler(this.button_addZakaz_Click);
             // 
-            // button_save
-            // 
-            this.button_save.Location = new System.Drawing.Point(673, 613);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(235, 39);
-            this.button_save.TabIndex = 63;
-            this.button_save.Text = "Сохроанить";
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
             // button_izm
             // 
-            this.button_izm.Location = new System.Drawing.Point(369, 613);
+            this.button_izm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_izm.FlatAppearance.BorderSize = 0;
+            this.button_izm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_izm.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_izm.Location = new System.Drawing.Point(750, 856);
             this.button_izm.Name = "button_izm";
             this.button_izm.Size = new System.Drawing.Size(235, 39);
             this.button_izm.TabIndex = 62;
@@ -274,11 +295,68 @@
             this.button_izm.UseVisualStyleBackColor = true;
             this.button_izm.Click += new System.EventHandler(this.button_izm_Click);
             // 
+            // button_save
+            // 
+            this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_save.FlatAppearance.BorderSize = 0;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_save.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_save.Location = new System.Drawing.Point(1054, 856);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(235, 39);
+            this.button_save.TabIndex = 63;
+            this.button_save.Text = "Сохранить";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // textBox_Search
+            // 
+            this.textBox_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Search.Font = new System.Drawing.Font("Arsenal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Search.Location = new System.Drawing.Point(1419, 250);
+            this.textBox_Search.Name = "textBox_Search";
+            this.textBox_Search.Size = new System.Drawing.Size(360, 34);
+            this.textBox_Search.TabIndex = 64;
+            // 
+            // button_search
+            // 
+            this.button_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_search.BackgroundImage")));
+            this.button_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_search.FlatAppearance.BorderSize = 0;
+            this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_search.Font = new System.Drawing.Font("Arsenal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_search.Location = new System.Drawing.Point(1785, 249);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(35, 35);
+            this.button_search.TabIndex = 65;
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
+            // button_reload
+            // 
+            this.button_reload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_reload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_reload.FlatAppearance.BorderSize = 0;
+            this.button_reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_reload.Font = new System.Drawing.Font("Arsenal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_reload.Location = new System.Drawing.Point(1492, 290);
+            this.button_reload.Name = "button_reload";
+            this.button_reload.Size = new System.Drawing.Size(240, 40);
+            this.button_reload.TabIndex = 66;
+            this.button_reload.Text = "Показать все данные";
+            this.button_reload.UseVisualStyleBackColor = true;
+            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
+            // 
             // Zakaz1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.button_reload);
+            this.Controls.Add(this.button_search);
+            this.Controls.Add(this.textBox_Search);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_izm);
             this.Controls.Add(this.button_addZakaz);
@@ -304,6 +382,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Zakaz1Form";
             this.Text = "Zakaz1Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Zakaz1Form_FormClosing);
             this.Load += new System.EventHandler(this.Zakaz1Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -317,24 +396,27 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox_id_zakaz;
         private System.Windows.Forms.Label label_id;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_client_name;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_id_tovar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_client_surname;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_client_otch;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_cena_zakaza;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_zakaz_col;
-        private System.Windows.Forms.ComboBox comboBox_Id_user;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox_satus;
+        private System.Windows.Forms.ComboBox comboBox_Id_user;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox_satus;
         private System.Windows.Forms.Button button_addZakaz;
-        private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_izm;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.TextBox textBox_Search;
+        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.Button button_reload;
     }
 }

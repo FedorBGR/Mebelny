@@ -37,6 +37,19 @@ namespace Mebelny
             Zakaz1Form zakaz1= new Zakaz1Form();
             zakaz1.Show();
         }
+
+        private void EmplForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (close == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (close == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
     }
 

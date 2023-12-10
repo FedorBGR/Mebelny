@@ -31,5 +31,25 @@ namespace Mebelny
             TovarForm tovar = new TovarForm();
             tovar.Show();
         }
+
+        private void button_zakazy_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Zakaz2Form zakaz2 = new Zakaz2Form();
+            zakaz2.Show();
+        }
+
+        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (close == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (close == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

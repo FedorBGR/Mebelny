@@ -28,40 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button_zakazy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1144, 628);
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 41);
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(35, 35);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 12);
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arsenal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(80, 67);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 39);
+            this.button2.Size = new System.Drawing.Size(121, 45);
             this.button2.TabIndex = 1;
             this.button2.Text = "Товары";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button_zakazy
+            // 
+            this.button_zakazy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_zakazy.FlatAppearance.BorderSize = 0;
+            this.button_zakazy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_zakazy.Font = new System.Drawing.Font("Arsenal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_zakazy.Location = new System.Drawing.Point(80, 143);
+            this.button_zakazy.Name = "button_zakazy";
+            this.button_zakazy.Size = new System.Drawing.Size(121, 45);
+            this.button_zakazy.TabIndex = 4;
+            this.button_zakazy.Text = "Заказы";
+            this.button_zakazy.UseVisualStyleBackColor = true;
+            this.button_zakazy.Click += new System.EventHandler(this.button_zakazy_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(284, 276);
+            this.Controls.Add(this.button_zakazy);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
             this.ResumeLayout(false);
 
         }
@@ -70,5 +101,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_zakazy;
     }
 }

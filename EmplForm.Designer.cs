@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmplForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button_tovary = new System.Windows.Forms.Button();
             this.button_zakazy = new System.Windows.Forms.Button();
@@ -35,19 +36,28 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1144, 628);
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arsenal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 41);
+            this.button1.Size = new System.Drawing.Size(35, 35);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_tovary
             // 
-            this.button_tovary.Location = new System.Drawing.Point(25, 22);
+            this.button_tovary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_tovary.FlatAppearance.BorderSize = 0;
+            this.button_tovary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_tovary.Font = new System.Drawing.Font("Arsenal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_tovary.Location = new System.Drawing.Point(76, 148);
             this.button_tovary.Name = "button_tovary";
-            this.button_tovary.Size = new System.Drawing.Size(86, 47);
+            this.button_tovary.Size = new System.Drawing.Size(128, 45);
             this.button_tovary.TabIndex = 2;
             this.button_tovary.Text = "Товары";
             this.button_tovary.UseVisualStyleBackColor = true;
@@ -55,9 +65,13 @@
             // 
             // button_zakazy
             // 
-            this.button_zakazy.Location = new System.Drawing.Point(253, 22);
+            this.button_zakazy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_zakazy.FlatAppearance.BorderSize = 0;
+            this.button_zakazy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_zakazy.Font = new System.Drawing.Font("Arsenal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_zakazy.Location = new System.Drawing.Point(76, 62);
             this.button_zakazy.Name = "button_zakazy";
-            this.button_zakazy.Size = new System.Drawing.Size(86, 47);
+            this.button_zakazy.Size = new System.Drawing.Size(128, 45);
             this.button_zakazy.TabIndex = 3;
             this.button_zakazy.Text = "Заказы";
             this.button_zakazy.UseVisualStyleBackColor = true;
@@ -67,13 +81,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(284, 276);
             this.Controls.Add(this.button_zakazy);
             this.Controls.Add(this.button_tovary);
             this.Controls.Add(this.button1);
             this.Name = "EmplForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmplForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmplForm_FormClosing);
             this.ResumeLayout(false);
 
         }

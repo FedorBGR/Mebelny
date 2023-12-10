@@ -95,6 +95,19 @@ namespace Mebelny
             ReloadForm();
         }
 
+        private void TovarForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (close == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (close == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void button_search_Click(object sender, EventArgs e)
         {
             try

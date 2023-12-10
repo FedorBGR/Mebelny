@@ -74,5 +74,32 @@ namespace Mebelny
                 return false;
             }
         }
+
+        static public void searchZakaz(string zakazSearch)
+        {
+            try
+            {
+                msCommand.CommandText = @"SELECT * FROM zakazy WHERE concat (id_zakaz) LIKE '" + zakazSearch + "' ";
+                dtZakaz.Clear();
+                msDataAdapter.SelectCommand = DBconnection.msCommand;
+                msDataAdapter.Fill(dtZakaz);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при поиске заказа", "Ошибка поиска", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        static public void deleteZakaz(string id_zakaz)
+        {
+            try
+            {
+                msCommand.CommandText = "DELETE FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
+                msCommand.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении выбранной записи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

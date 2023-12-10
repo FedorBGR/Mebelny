@@ -139,6 +139,12 @@
     <Compile Include="Zakaz1Form.Designer.cs">
       <DependentUpon>Zakaz1Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zakaz2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zakaz2Form.Designer.cs">
+      <DependentUpon>Zakaz2Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZakazClass.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Zakaz1Form.resx">
       <DependentUpon>Zakaz1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zakaz2Form.resx">
+      <DependentUpon>Zakaz2Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

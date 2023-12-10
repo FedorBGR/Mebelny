@@ -43,6 +43,19 @@ namespace Mebelny
             dataGridView1.DataSource = TovarClass.dtTovar;
         }
 
+        private void TovarEmpForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (close == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (close == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void button_search_Click(object sender, EventArgs e)
         {
             try

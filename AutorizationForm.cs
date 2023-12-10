@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Mebelny
 {
@@ -64,6 +65,29 @@ namespace Mebelny
             {
                 MessageBox.Show("Заполните все поля!", "Заполнение полей", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AutorizationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult close = MessageBox.Show("Вы хотите завершить работу?", "Завершить сеанс?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (close == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (close == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void AutorizationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }
