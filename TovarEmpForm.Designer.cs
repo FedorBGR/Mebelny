@@ -344,7 +344,8 @@
             this.Controls.Add(this.textBox_id);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TovarEmpForm";
             this.Text = "TovarEmpForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TovarEmpForm_FormClosing);

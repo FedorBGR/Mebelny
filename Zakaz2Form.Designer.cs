@@ -443,6 +443,7 @@
             this.Controls.Add(this.textBox_id_zakaz);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Zakaz2Form";
             this.Text = "Zakaz2Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Zakaz2Form_FormClosing);

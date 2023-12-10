@@ -431,6 +431,7 @@
             this.Controls.Add(this.textBox_id_zakaz);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Zakaz1Form";
             this.Text = "Zakaz1Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Zakaz1Form_FormClosing);
