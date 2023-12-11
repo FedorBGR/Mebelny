@@ -203,11 +203,11 @@
             // 
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_id.Location = new System.Drawing.Point(401, 575);
+            this.label_id.Location = new System.Drawing.Point(379, 575);
             this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(113, 33);
+            this.label_id.Size = new System.Drawing.Size(135, 33);
             this.label_id.TabIndex = 14;
-            this.label_id.Text = "id товара";
+            this.label_id.Text = "Код товара";
             this.label_id.Click += new System.EventHandler(this.label3_Click);
             // 
             // label_name
@@ -234,11 +234,12 @@
             // 
             this.label_cena.AutoSize = true;
             this.label_cena.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_cena.Location = new System.Drawing.Point(385, 728);
+            this.label_cena.Location = new System.Drawing.Point(334, 728);
             this.label_cena.Name = "label_cena";
-            this.label_cena.Size = new System.Drawing.Size(129, 33);
+            this.label_cena.Size = new System.Drawing.Size(180, 33);
             this.label_cena.TabIndex = 17;
-            this.label_cena.Text = "Стоимость";
+            this.label_cena.Text = "Стоимость руб.";
+            this.label_cena.Click += new System.EventHandler(this.label_cena_Click);
             // 
             // label_postav
             // 

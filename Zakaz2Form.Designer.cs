@@ -59,6 +59,7 @@
             this.button_toAut = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.button_hide = new System.Windows.Forms.Button();
+            this.buttonAddvzakaz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +109,7 @@
             this.button_save.FlatAppearance.BorderSize = 0;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_save.Location = new System.Drawing.Point(911, 861);
+            this.button_save.Location = new System.Drawing.Point(987, 862);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(235, 39);
             this.button_save.TabIndex = 89;
@@ -122,7 +123,7 @@
             this.button_izm.FlatAppearance.BorderSize = 0;
             this.button_izm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_izm.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_izm.Location = new System.Drawing.Point(621, 861);
+            this.button_izm.Location = new System.Drawing.Point(697, 862);
             this.button_izm.Name = "button_izm";
             this.button_izm.Size = new System.Drawing.Size(235, 39);
             this.button_izm.TabIndex = 88;
@@ -136,7 +137,7 @@
             this.button_addZakaz.FlatAppearance.BorderSize = 0;
             this.button_addZakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_addZakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_addZakaz.Location = new System.Drawing.Point(353, 861);
+            this.button_addZakaz.Location = new System.Drawing.Point(429, 862);
             this.button_addZakaz.Name = "button_addZakaz";
             this.button_addZakaz.Size = new System.Drawing.Size(235, 39);
             this.button_addZakaz.TabIndex = 87;
@@ -163,7 +164,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(852, 728);
+            this.label8.Location = new System.Drawing.Point(852, 726);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(160, 33);
             this.label8.TabIndex = 85;
@@ -183,11 +184,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(848, 675);
+            this.label7.Location = new System.Drawing.Point(883, 668);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(163, 33);
+            this.label7.Size = new System.Drawing.Size(129, 33);
             this.label7.TabIndex = 83;
-            this.label7.Text = "id сотрудника";
+            this.label7.Text = "Сотрудник";
             // 
             // label6
             // 
@@ -284,16 +285,17 @@
             this.comboBox_id_tovar.Name = "comboBox_id_tovar";
             this.comboBox_id_tovar.Size = new System.Drawing.Size(258, 34);
             this.comboBox_id_tovar.TabIndex = 73;
+            this.comboBox_id_tovar.SelectedIndexChanged += new System.EventHandler(this.comboBox_id_tovar_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(413, 622);
+            this.label1.Location = new System.Drawing.Point(391, 622);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 33);
+            this.label1.Size = new System.Drawing.Size(135, 33);
             this.label1.TabIndex = 72;
-            this.label1.Text = "id товара";
+            this.label1.Text = "Код товара";
             // 
             // textBox_client_name
             // 
@@ -308,11 +310,11 @@
             // 
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_id.Location = new System.Drawing.Point(418, 562);
+            this.label_id.Location = new System.Drawing.Point(368, 562);
             this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(108, 33);
+            this.label_id.Size = new System.Drawing.Size(158, 33);
             this.label_id.TabIndex = 70;
-            this.label_id.Text = "id заказа";
+            this.label_id.Text = "Номер заказа";
             // 
             // textBox_id_zakaz
             // 
@@ -355,7 +357,7 @@
             this.button_deletezakaz.FlatAppearance.BorderSize = 0;
             this.button_deletezakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_deletezakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_deletezakaz.Location = new System.Drawing.Point(1162, 861);
+            this.button_deletezakaz.Location = new System.Drawing.Point(1238, 862);
             this.button_deletezakaz.Name = "button_deletezakaz";
             this.button_deletezakaz.Size = new System.Drawing.Size(235, 39);
             this.button_deletezakaz.TabIndex = 93;
@@ -408,11 +410,25 @@
             this.button_hide.UseVisualStyleBackColor = true;
             this.button_hide.Click += new System.EventHandler(this.button_hide_Click);
             // 
+            // buttonAddvzakaz
+            // 
+            this.buttonAddvzakaz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddvzakaz.FlatAppearance.BorderSize = 0;
+            this.buttonAddvzakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddvzakaz.Font = new System.Drawing.Font("Arsenal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddvzakaz.Location = new System.Drawing.Point(1291, 609);
+            this.buttonAddvzakaz.Name = "buttonAddvzakaz";
+            this.buttonAddvzakaz.Size = new System.Drawing.Size(116, 50);
+            this.buttonAddvzakaz.TabIndex = 97;
+            this.buttonAddvzakaz.Text = "Добавить";
+            this.buttonAddvzakaz.UseVisualStyleBackColor = true;
+            // 
             // Zakaz2Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.buttonAddvzakaz);
             this.Controls.Add(this.button_hide);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.button_toAut);
@@ -486,5 +502,6 @@
         private System.Windows.Forms.Button button_toAut;
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Button button_hide;
+        private System.Windows.Forms.Button buttonAddvzakaz;
     }
 }

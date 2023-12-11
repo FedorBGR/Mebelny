@@ -126,6 +126,11 @@ namespace Mebelny
 
         }
 
+        private void comboBox_id_tovar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button_toAut_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -101,11 +101,11 @@
             // 
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_id.Location = new System.Drawing.Point(413, 559);
+            this.label_id.Location = new System.Drawing.Point(363, 559);
             this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(108, 33);
+            this.label_id.Size = new System.Drawing.Size(158, 33);
             this.label_id.TabIndex = 44;
-            this.label_id.Text = "id заказа";
+            this.label_id.Text = "Номер заказа";
             // 
             // textBox_client_name
             // 
@@ -120,11 +120,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(408, 619);
+            this.label1.Location = new System.Drawing.Point(386, 617);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 33);
+            this.label1.Size = new System.Drawing.Size(135, 33);
             this.label1.TabIndex = 46;
-            this.label1.Text = "id товара";
+            this.label1.Text = "Код товара";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox_id_tovar
@@ -228,11 +228,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(843, 672);
+            this.label7.Location = new System.Drawing.Point(868, 665);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(163, 33);
+            this.label7.Size = new System.Drawing.Size(129, 33);
             this.label7.TabIndex = 57;
-            this.label7.Text = "id сотрудника";
+            this.label7.Text = "Сотрудник";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // comboBox_Id_user

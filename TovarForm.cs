@@ -120,6 +120,11 @@ namespace Mebelny
             Application.Exit();
         }
 
+        private void label_cena_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button_search_Click(object sender, EventArgs e)
         {
             try
