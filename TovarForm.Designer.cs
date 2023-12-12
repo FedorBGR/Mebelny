@@ -114,6 +114,7 @@
             this.textBox_col.Name = "textBox_col";
             this.textBox_col.Size = new System.Drawing.Size(258, 25);
             this.textBox_col.TabIndex = 6;
+            this.textBox_col.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_col_KeyPress);
             // 
             // textBox_cena
             // 
@@ -123,6 +124,7 @@
             this.textBox_cena.Name = "textBox_cena";
             this.textBox_cena.Size = new System.Drawing.Size(258, 25);
             this.textBox_cena.TabIndex = 7;
+            this.textBox_cena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_cena_KeyPress);
             // 
             // textBox_postav
             // 
@@ -224,11 +226,11 @@
             // 
             this.label_col.AutoSize = true;
             this.label_col.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_col.Location = new System.Drawing.Point(376, 677);
+            this.label_col.Location = new System.Drawing.Point(334, 677);
             this.label_col.Name = "label_col";
-            this.label_col.Size = new System.Drawing.Size(138, 33);
+            this.label_col.Size = new System.Drawing.Size(180, 33);
             this.label_col.TabIndex = 16;
-            this.label_col.Text = "Количество";
+            this.label_col.Text = "Количество шт.";
             // 
             // label_cena
             // 
@@ -255,12 +257,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Location = new System.Drawing.Point(543, 224);
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.Location = new System.Drawing.Point(374, 224);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(547, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(819, 283);
             this.dataGridView1.TabIndex = 19;
             // 
             // button_search

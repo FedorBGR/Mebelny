@@ -46,7 +46,6 @@
             this.textBox_zakaz_col = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_Id_user = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox_satus = new System.Windows.Forms.ComboBox();
             this.button_addZakaz = new System.Windows.Forms.Button();
@@ -58,6 +57,9 @@
             this.button_hide = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.button_toAut = new System.Windows.Forms.Button();
+            this.buttonAddvzakaz = new System.Windows.Forms.Button();
+            this.button_vzakaz = new System.Windows.Forms.Button();
+            this.textBox_fam = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,12 +82,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Location = new System.Drawing.Point(348, 250);
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.Location = new System.Drawing.Point(348, 208);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1044, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(1044, 325);
             this.dataGridView1.TabIndex = 42;
             // 
             // textBox_id_zakaz
@@ -115,6 +119,7 @@
             this.textBox_client_name.Name = "textBox_client_name";
             this.textBox_client_name.Size = new System.Drawing.Size(258, 25);
             this.textBox_client_name.TabIndex = 45;
+            this.textBox_client_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_client_name_KeyPress);
             // 
             // label1
             // 
@@ -155,6 +160,7 @@
             this.textBox_client_surname.Name = "textBox_client_surname";
             this.textBox_client_surname.Size = new System.Drawing.Size(258, 25);
             this.textBox_client_surname.TabIndex = 49;
+            this.textBox_client_surname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_client_surname_KeyPress);
             // 
             // label3
             // 
@@ -174,6 +180,7 @@
             this.textBox_client_otch.Name = "textBox_client_otch";
             this.textBox_client_otch.Size = new System.Drawing.Size(258, 25);
             this.textBox_client_otch.TabIndex = 51;
+            this.textBox_client_otch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_client_otch_KeyPress);
             // 
             // label4
             // 
@@ -191,6 +198,7 @@
             this.textBox_cena_zakaza.Location = new System.Drawing.Point(1013, 568);
             this.textBox_cena_zakaza.Multiline = true;
             this.textBox_cena_zakaza.Name = "textBox_cena_zakaza";
+            this.textBox_cena_zakaza.ReadOnly = true;
             this.textBox_cena_zakaza.Size = new System.Drawing.Size(258, 25);
             this.textBox_cena_zakaza.TabIndex = 53;
             // 
@@ -212,6 +220,7 @@
             this.textBox_zakaz_col.Name = "textBox_zakaz_col";
             this.textBox_zakaz_col.Size = new System.Drawing.Size(258, 25);
             this.textBox_zakaz_col.TabIndex = 55;
+            this.textBox_zakaz_col.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_zakaz_col_KeyPress);
             // 
             // label6
             // 
@@ -234,16 +243,6 @@
             this.label7.TabIndex = 57;
             this.label7.Text = "Сотрудник";
             this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // comboBox_Id_user
-            // 
-            this.comboBox_Id_user.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox_Id_user.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox_Id_user.FormattingEnabled = true;
-            this.comboBox_Id_user.Location = new System.Drawing.Point(1013, 664);
-            this.comboBox_Id_user.Name = "comboBox_Id_user";
-            this.comboBox_Id_user.Size = new System.Drawing.Size(258, 34);
-            this.comboBox_Id_user.TabIndex = 58;
             // 
             // label8
             // 
@@ -276,7 +275,7 @@
             this.button_addZakaz.FlatAppearance.BorderSize = 0;
             this.button_addZakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_addZakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_addZakaz.Location = new System.Drawing.Point(448, 856);
+            this.button_addZakaz.Location = new System.Drawing.Point(572, 856);
             this.button_addZakaz.Name = "button_addZakaz";
             this.button_addZakaz.Size = new System.Drawing.Size(235, 39);
             this.button_addZakaz.TabIndex = 61;
@@ -290,7 +289,7 @@
             this.button_izm.FlatAppearance.BorderSize = 0;
             this.button_izm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_izm.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_izm.Location = new System.Drawing.Point(750, 856);
+            this.button_izm.Location = new System.Drawing.Point(813, 856);
             this.button_izm.Name = "button_izm";
             this.button_izm.Size = new System.Drawing.Size(235, 39);
             this.button_izm.TabIndex = 62;
@@ -397,11 +396,52 @@
             this.button_toAut.UseVisualStyleBackColor = true;
             this.button_toAut.Click += new System.EventHandler(this.button_toAut_Click);
             // 
+            // buttonAddvzakaz
+            // 
+            this.buttonAddvzakaz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddvzakaz.FlatAppearance.BorderSize = 0;
+            this.buttonAddvzakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddvzakaz.Font = new System.Drawing.Font("Arsenal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddvzakaz.Location = new System.Drawing.Point(1277, 606);
+            this.buttonAddvzakaz.Name = "buttonAddvzakaz";
+            this.buttonAddvzakaz.Size = new System.Drawing.Size(116, 50);
+            this.buttonAddvzakaz.TabIndex = 100;
+            this.buttonAddvzakaz.Text = "Добавить";
+            this.buttonAddvzakaz.UseVisualStyleBackColor = true;
+            this.buttonAddvzakaz.Click += new System.EventHandler(this.buttonAddvzakaz_Click);
+            // 
+            // button_vzakaz
+            // 
+            this.button_vzakaz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_vzakaz.FlatAppearance.BorderSize = 0;
+            this.button_vzakaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_vzakaz.Font = new System.Drawing.Font("Arsenal", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_vzakaz.Location = new System.Drawing.Point(357, 837);
+            this.button_vzakaz.Name = "button_vzakaz";
+            this.button_vzakaz.Size = new System.Drawing.Size(235, 77);
+            this.button_vzakaz.TabIndex = 101;
+            this.button_vzakaz.Text = "Внести товар в заказ";
+            this.button_vzakaz.UseVisualStyleBackColor = true;
+            this.button_vzakaz.Click += new System.EventHandler(this.button_vzakaz_Click);
+            // 
+            // textBox_fam
+            // 
+            this.textBox_fam.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_fam.Location = new System.Drawing.Point(1013, 672);
+            this.textBox_fam.Multiline = true;
+            this.textBox_fam.Name = "textBox_fam";
+            this.textBox_fam.ReadOnly = true;
+            this.textBox_fam.Size = new System.Drawing.Size(258, 25);
+            this.textBox_fam.TabIndex = 102;
+            // 
             // Zakaz1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.textBox_fam);
+            this.Controls.Add(this.button_vzakaz);
+            this.Controls.Add(this.buttonAddvzakaz);
             this.Controls.Add(this.button_hide);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.button_toAut);
@@ -413,7 +453,6 @@
             this.Controls.Add(this.button_addZakaz);
             this.Controls.Add(this.comboBox_satus);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox_Id_user);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_zakaz_col);
@@ -461,7 +500,6 @@
         private System.Windows.Forms.TextBox textBox_zakaz_col;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox_Id_user;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox_satus;
         private System.Windows.Forms.Button button_addZakaz;
@@ -473,5 +511,8 @@
         private System.Windows.Forms.Button button_hide;
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Button button_toAut;
+        private System.Windows.Forms.Button buttonAddvzakaz;
+        private System.Windows.Forms.Button button_vzakaz;
+        private System.Windows.Forms.TextBox textBox_fam;
     }
 }

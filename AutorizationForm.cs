@@ -83,7 +83,7 @@ namespace Mebelny
 
         private void AutorizationForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -95,5 +95,6 @@ namespace Mebelny
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        
     }
 }

@@ -3,6 +3,7 @@ using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,12 @@ namespace Mebelny
         {
             try
             {
-                msCommand.CommandText = "SELECT * FROM zakazy";
+                msCommand.CommandText = @"SELECT id_zakaz AS 'Номер закзаа', id_tovar AS 'Код товара', client_name AS 'Имя клиента', client_surname AS 'Фамилия клиента', client_otch AS 'Отчество клиента', zakaz_cena AS 'Цена заказа', zakaz_col AS 'Общее количество товаров', id_empl AS 'Обслуживал сотрудник', zakaz_time AS 'Время заказа', zakaz_ztatus AS 'Статус' FROM zakazy";
                 dtZakaz.Clear();
                 msDataAdapter.SelectCommand = DBconnection.msCommand;
                 msDataAdapter.Fill(dtZakaz);
+                
+
             }
             catch
             {
@@ -29,7 +32,7 @@ namespace Mebelny
             }
         }
 
-        static public bool addZakaz(int id_tovar, string client_name, string client_surname, string client_otch, int zakaz_cena, int zakaz_col, int id_empl, string zakaz_status)
+        static public bool addZakaz(string id_tovar, string client_name, string client_surname, string client_otch, int zakaz_cena, int zakaz_col, string id_empl, string zakaz_status)
         {
             string v = msCommand.CommandText = "SELECT tovar_cena FROM tovar WHERE id_tovar = '" + id_tovar + "'";
  
@@ -52,7 +55,33 @@ namespace Mebelny
             }
         }
 
-        static public bool EditZakaz(int id_zakaz, int id_tovar, string client_name, string client_surname, string client_otch, int id_empl, string zakaz_status)
+        static public bool addTovartoZakaz (int id_zakaz ,string id_tovar, int zakaz_cena, int zakaz_col)
+        {
+            string v = msCommand.CommandText = "SELECT id_tovar FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
+            string b = msCommand.CommandText = "SELECT zakaz_cena FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
+            string c = msCommand.CommandText = "SELECT zakaz_col FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
+
+            try
+            {
+                msCommand.CommandText = "UPDATE zakazy SET id_tovar =  '" + id_tovar + "' , zakaz_cena = '" + zakaz_cena + "', zakaz_col = '" + zakaz_col +"' WHERE id_zakaz = '" + id_zakaz +"'" ;
+
+                if (msCommand.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при добавлении в заказ", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error) ;
+                return false;
+            }
+        }
+
+        static public bool EditZakaz(int id_zakaz, string id_tovar, string client_name, string client_surname, string client_otch, string id_empl, string zakaz_status)
         {
             try
             {
@@ -79,7 +108,7 @@ namespace Mebelny
         {
             try
             {
-                msCommand.CommandText = @"SELECT * FROM zakazy WHERE concat (id_zakaz) LIKE '" + zakazSearch + "' ";
+                msCommand.CommandText = @"SELECT id_zakaz AS 'Номер закзаа', id_tovar AS 'Код товара', client_name AS 'Имя клиента', client_surname AS 'Фамилия клиента', client_otch AS 'Отчество клиента', zakaz_cena AS 'Цена заказа', zakaz_col AS 'Общее количество товаров', id_empl AS 'Обслуживал сотрудник', zakaz_time AS 'Время заказа', zakaz_ztatus AS 'Статус' FROM zakazy WHERE concat (id_zakaz) LIKE '" + zakazSearch + "' ";
                 dtZakaz.Clear();
                 msDataAdapter.SelectCommand = DBconnection.msCommand;
                 msDataAdapter.Fill(dtZakaz);

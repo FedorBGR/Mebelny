@@ -9,7 +9,9 @@ namespace Mebelny
 {
     internal class Autorization
     {
-        static public string Role, User;
+        static public string Role, User, surname;
+
+       
 
         static public void Autorization1 (string login, string password)
         {
@@ -25,6 +27,7 @@ namespace Mebelny
                 else 
                 {
                     Role= null;
+                    surname = null;
                 }
             }
             catch 
@@ -33,5 +36,20 @@ namespace Mebelny
                 MessageBox.Show("Ошибка при входе");
             }
         }
+        static public string Famil (string login)
+        {
+            try
+            {
+                DBconnection.msCommand.CommandText = @"SELECT surname FROM mebel.user WHERE username = '" +User+ "'";
+                Object result = DBconnection.msCommand.ExecuteScalar();
+                surname = result.ToString();
+                return surname;
+            }
+            catch 
+            {
+                return null;
+            }
+        }
+        
     }
 }

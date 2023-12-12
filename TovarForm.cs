@@ -81,7 +81,8 @@ namespace Mebelny
 
         private void TovarForm_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized; 
             TovarClass.GetTovar();
@@ -123,6 +124,28 @@ namespace Mebelny
         private void label_cena_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_col_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void textBox_cena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+            }
         }
 
         private void button_search_Click(object sender, EventArgs e)
