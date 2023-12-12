@@ -60,6 +60,8 @@
             this.buttonAddvzakaz = new System.Windows.Forms.Button();
             this.button_vzakaz = new System.Windows.Forms.Button();
             this.textBox_fam = new System.Windows.Forms.TextBox();
+            this.comboBoxj = new System.Windows.Forms.ComboBox();
+            this.textBoxj = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +100,7 @@
             this.textBox_id_zakaz.Location = new System.Drawing.Point(527, 567);
             this.textBox_id_zakaz.Multiline = true;
             this.textBox_id_zakaz.Name = "textBox_id_zakaz";
+            this.textBox_id_zakaz.ReadOnly = true;
             this.textBox_id_zakaz.Size = new System.Drawing.Size(258, 25);
             this.textBox_id_zakaz.TabIndex = 43;
             // 
@@ -434,11 +437,33 @@
             this.textBox_fam.Size = new System.Drawing.Size(258, 25);
             this.textBox_fam.TabIndex = 102;
             // 
+            // comboBoxj
+            // 
+            this.comboBoxj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxj.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxj.FormattingEnabled = true;
+            this.comboBoxj.Location = new System.Drawing.Point(527, 616);
+            this.comboBoxj.Name = "comboBoxj";
+            this.comboBoxj.Size = new System.Drawing.Size(258, 34);
+            this.comboBoxj.TabIndex = 103;
+            // 
+            // textBoxj
+            // 
+            this.textBoxj.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxj.Location = new System.Drawing.Point(1012, 619);
+            this.textBoxj.Multiline = true;
+            this.textBoxj.Name = "textBoxj";
+            this.textBoxj.Size = new System.Drawing.Size(258, 25);
+            this.textBoxj.TabIndex = 104;
+            this.textBoxj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxj_KeyPress);
+            // 
             // Zakaz1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.textBoxj);
+            this.Controls.Add(this.comboBoxj);
             this.Controls.Add(this.textBox_fam);
             this.Controls.Add(this.button_vzakaz);
             this.Controls.Add(this.buttonAddvzakaz);
@@ -514,5 +539,7 @@
         private System.Windows.Forms.Button buttonAddvzakaz;
         private System.Windows.Forms.Button button_vzakaz;
         private System.Windows.Forms.TextBox textBox_fam;
+        private System.Windows.Forms.ComboBox comboBoxj;
+        private System.Windows.Forms.TextBox textBoxj;
     }
 }

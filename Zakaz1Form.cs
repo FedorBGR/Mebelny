@@ -55,6 +55,19 @@ namespace Mebelny
             }
         }
 
+        private void DataIntoComboxj()
+        {
+            string sql = @"SELECT id_tovar FROM tovar";
+            DBconnection.msCommand.CommandText = sql;
+            using (var reader = DBconnection.msCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    comboBoxj.Items.Add(reader["id_tovar"].ToString());
+                }
+            }
+        }
+
         private void DataIntoComboxIdEMpl()
         {
             
@@ -71,6 +84,7 @@ namespace Mebelny
             this.WindowState = FormWindowState.Maximized;
             DataIntoComboxIdTovar();
             DataIntoComboxIdEMpl();
+            DataIntoComboxj();
             ZakazClass.GetZakaz();
             dataGridView1.DataSource = ZakazClass.dtZakaz;
             buttonAddvzakaz.Enabled = false;
@@ -162,10 +176,21 @@ namespace Mebelny
             ZakazCol = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             textBox_id_zakaz.Text = Idzakaz;
             buttonAddvzakaz.Enabled = true;
+            textBoxj.Visible = true;
+            comboBoxj.Visible = true;
+            textBox_zakaz_col.Text = "";
+            textBox_client_name.Enabled = false;
+            textBox_client_otch.Enabled = false;
+            textBox_client_surname.Enabled = false;
+            comboBox_satus.Enabled = false;
         }
 
         private void buttonAddvzakaz_Click(object sender, EventArgs e)
         {
+            string idt1 = Convert.ToString(comboBoxj.Text);
+            comboBox_id_tovar.Text = idt1;
+            int zkc1 = Convert.ToInt32(textBoxj.Text);
+            textBox_zakaz_col.Text = zkc1.ToString();
             string col_do = @"SELECT tovar_col FROM tovar WHERE id_tovar = '" + comboBox_id_tovar.Text + "'";
             DBconnection.msCommand.CommandText = col_do;
             Object resultcoldo = DBconnection.msCommand.ExecuteScalar();
@@ -184,14 +209,15 @@ namespace Mebelny
             Object result = DBconnection.msCommand.ExecuteScalar();
             if (result != null && result1 != null && result2 != null && result3 != null)
             {
+                int j = Convert.ToInt32(textBoxj.Text);
                 int price = Convert.ToInt32(result);
                 int x = price;
-                int y = Convert.ToInt32(textBox_zakaz_col.Text);
+                int y = Convert.ToInt32(textBoxj.Text);
                 int z = x * y;
                 textBox_cena_zakaza.Text = z.ToString();
 
                 int colvo = Convert.ToInt32(result3);
-                int colvo_posle = colvo + y;
+                int colvo_posle = colvo + j;
                 textBox_zakaz_col.Text = colvo_posle.ToString();
 
                 int price2 = Convert.ToInt32(result2);
@@ -199,40 +225,36 @@ namespace Mebelny
                 textBox_cena_zakaza.Text = price_posle.ToString();
 
                 string id_tov = result1.ToString();
-                comboBox_id_tovar.Text = id_tov + ";" + comboBox_id_tovar.Text;
+                comboBox_id_tovar.Text = id_tov + ";" + comboBoxj.Text;
+
+
 
             }
             if (textBox_id_zakaz.Text == Idzakaz)
             {
+
+
                 if (textBox_id_zakaz.Text != "" && comboBox_id_tovar.Text != "" && textBox_cena_zakaza.Text != "" && textBox_zakaz_col.Text != "")
                 {
                     Idzakaz = textBox_id_zakaz.Text;
                     if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), int.Parse(textBox_zakaz_col.Text)))
                     {
-                        int y = Convert.ToInt32(textBox_zakaz_col.Text);
-                        if (Convert.ToInt32(resultcoldo) > y)
-                        {
-                            int col_col = Convert.ToInt32(resultcoldo) - y;
-                            string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBox_id_tovar.Text + "'";
-                            DBconnection.msCommand.CommandText = Obnovtov;
-                            Object resultobnov = DBconnection.msCommand.ExecuteScalar();
-                            MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ZakazClass.GetZakaz();
+                        int j = Convert.ToInt32(textBoxj.Text);
 
+                        int col_col = Convert.ToInt32(resultcoldo) - j;
+                        string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBoxj.Text + "'";
+                        DBconnection.msCommand.CommandText = Obnovtov;
+                        Object resultobnov = DBconnection.msCommand.ExecuteScalar();
+                        MessageBox.Show("Товар успешно добавлен в заказ", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ZakazClass.GetZakaz();
+                        textBox_cena_zakaza.Text = "";
+                        comboBox_id_tovar.Text = "";
+                        textBox_client_name.Text = "";
+                        textBox_client_surname.Text = "";
+                        textBox_client_otch.Text = "";
+                        textBox_zakaz_col.Text = "";
 
-                            textBox_cena_zakaza.Text = "";
-                            comboBox_id_tovar.Text = "";
-                            textBox_client_name.Text = "";
-                            textBox_client_surname.Text = "";
-                            textBox_client_otch.Text = "";
-                            textBox_zakaz_col.Text = "";
-                            comboBox_satus.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show("Товара на складе едостаточно", "Товара недостаточно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-
+                        comboBox_satus.Text = "";
                     }
                     else
                     {
@@ -248,67 +270,53 @@ namespace Mebelny
             {
                 if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), int.Parse(textBox_zakaz_col.Text)))
                 {
-                    int y = Convert.ToInt32(textBox_zakaz_col.Text);
-                    if (Convert.ToInt32(resultcoldo) > y)
-                    {
-                        int col_col = Convert.ToInt32(resultcoldo) - y;
-                        string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBox_id_tovar.Text + "'";
-                        DBconnection.msCommand.CommandText = Obnovtov;
-                        Object resultobnov = DBconnection.msCommand.ExecuteScalar();
-                        MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ZakazClass.GetZakaz();
+                    int j = Convert.ToInt32(textBoxj.Text);
 
+                    int col_col = Convert.ToInt32(resultcoldo) - j;
+                    string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBoxj.Text + "'";
+                    DBconnection.msCommand.CommandText = Obnovtov;
+                    Object resultobnov = DBconnection.msCommand.ExecuteScalar();
+                    MessageBox.Show("Товар успешно добавлен в заказ", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ZakazClass.GetZakaz();
+                    textBox_cena_zakaza.Text = "";
+                    comboBox_id_tovar.Text = "";
+                    textBox_client_name.Text = "";
+                    textBox_client_surname.Text = "";
+                    textBox_client_otch.Text = "";
+                    textBox_zakaz_col.Text = "";
 
-                        textBox_cena_zakaza.Text = "";
-                        comboBox_id_tovar.Text = "";
-                        textBox_client_name.Text = "";
-                        textBox_client_surname.Text = "";
-                        textBox_client_otch.Text = "";
-                        textBox_zakaz_col.Text = "";
-                        comboBox_satus.Text = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Товара на складе едостаточно", "Товара недостаточно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    comboBox_satus.Text = "";
                 }
                 else
                 {
+
+
                     if (textBox_id_zakaz.Text != "" && comboBox_id_tovar.Text != "" && textBox_cena_zakaza.Text != "" && textBox_zakaz_col.Text != "")
                     {
                         Idzakaz = textBox_id_zakaz.Text;
-
                         if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), int.Parse(textBox_zakaz_col.Text)))
                         {
-                            int y = Convert.ToInt32(textBox_zakaz_col.Text);
-                            if (Convert.ToInt32(resultcoldo) > y)
-                            {
-                                int col_col = Convert.ToInt32(resultcoldo) - y;
-                                string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBox_id_tovar.Text + "'";
-                                DBconnection.msCommand.CommandText = Obnovtov;
-                                Object resultobnov = DBconnection.msCommand.ExecuteScalar();
-                                MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ZakazClass.GetZakaz();
+                            int j = Convert.ToInt32(textBoxj.Text);
 
+                            int col_col = Convert.ToInt32(resultcoldo) - j;
+                            string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBoxj.Text + "'";
+                            DBconnection.msCommand.CommandText = Obnovtov;
+                            Object resultobnov = DBconnection.msCommand.ExecuteScalar();
+                            MessageBox.Show("Товар успешно добавлен в заказ", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ZakazClass.GetZakaz();
+                            textBox_cena_zakaza.Text = "";
+                            comboBox_id_tovar.Text = "";
+                            textBox_client_name.Text = "";
+                            textBox_client_surname.Text = "";
+                            textBox_client_otch.Text = "";
+                            textBox_zakaz_col.Text = "";
 
-                                textBox_cena_zakaza.Text = "";
-                                comboBox_id_tovar.Text = "";
-                                textBox_client_name.Text = "";
-                                textBox_client_surname.Text = "";
-                                textBox_client_otch.Text = "";
-                                textBox_zakaz_col.Text = "";
-                                comboBox_satus.Text = "";
-                            }
-                            else
-                            {
-                                MessageBox.Show("Товара на складе едостаточно", "Товара недостаточно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
+                            comboBox_satus.Text = "";
                         }
                         else
                         {
-                            MessageBox.Show("Ошибка при добавлении товара", "Ошибка обновления заказа", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Ошибка при добавлении в заказ", "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
                     }
                     else
                     {
@@ -316,7 +324,18 @@ namespace Mebelny
                     }
                 }
             }
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            textBoxj.Visible = false;
+            comboBoxj.Visible = false;
+            buttonAddvzakaz.Enabled = false;
+            buttonAddvzakaz.Enabled = false;
+            textBox_client_name.Enabled = false;
+            textBox_client_otch.Enabled = false;
+            textBox_client_surname.Enabled = false;
+            comboBox_satus.Enabled = false;
+
         }
+
 
         private void textBox_client_name_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -346,6 +365,17 @@ namespace Mebelny
         }
 
         private void textBox_zakaz_col_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void textBoxj_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)))
             {
@@ -503,6 +533,11 @@ namespace Mebelny
                     }
                 }
             }
+            textBox_client_name.Enabled = true;
+            textBox_client_otch.Enabled = true;
+            textBox_client_surname.Enabled = true;
+            comboBox_id_tovar.Enabled = true;
+            textBox_zakaz_col.Enabled = true;
         }
 
         private void button_izm_Click(object sender, EventArgs e)
@@ -526,6 +561,11 @@ namespace Mebelny
             textBox_zakaz_col.Text = ZakazCol;
             textBox_fam.Text = IdEmpl;
             comboBox_satus.Text = ZakazStatus;
+            textBox_client_name.Enabled = false;
+            textBox_client_otch.Enabled = false;
+            textBox_client_surname.Enabled = false;
+            comboBox_id_tovar.Enabled = false;
+            textBox_zakaz_col.Enabled = false;
         }
 
     }

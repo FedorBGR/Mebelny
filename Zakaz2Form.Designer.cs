@@ -61,6 +61,8 @@
             this.buttonAddvzakaz = new System.Windows.Forms.Button();
             this.button_vzakaz = new System.Windows.Forms.Button();
             this.textBox_fam = new System.Windows.Forms.TextBox();
+            this.textBoxj = new System.Windows.Forms.TextBox();
+            this.comboBoxj = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,6 +219,7 @@
             this.textBox_cena_zakaza.Location = new System.Drawing.Point(1018, 571);
             this.textBox_cena_zakaza.Multiline = true;
             this.textBox_cena_zakaza.Name = "textBox_cena_zakaza";
+            this.textBox_cena_zakaza.ReadOnly = true;
             this.textBox_cena_zakaza.Size = new System.Drawing.Size(258, 25);
             this.textBox_cena_zakaza.TabIndex = 79;
             // 
@@ -317,6 +320,7 @@
             this.textBox_id_zakaz.Location = new System.Drawing.Point(532, 570);
             this.textBox_id_zakaz.Multiline = true;
             this.textBox_id_zakaz.Name = "textBox_id_zakaz";
+            this.textBox_id_zakaz.ReadOnly = true;
             this.textBox_id_zakaz.Size = new System.Drawing.Size(258, 25);
             this.textBox_id_zakaz.TabIndex = 69;
             // 
@@ -333,6 +337,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1176, 283);
             this.dataGridView1.TabIndex = 68;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -445,11 +450,34 @@
             this.textBox_fam.Size = new System.Drawing.Size(258, 25);
             this.textBox_fam.TabIndex = 99;
             // 
+            // textBoxj
+            // 
+            this.textBoxj.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxj.Location = new System.Drawing.Point(1017, 622);
+            this.textBoxj.Multiline = true;
+            this.textBoxj.Name = "textBoxj";
+            this.textBoxj.Size = new System.Drawing.Size(258, 25);
+            this.textBoxj.TabIndex = 100;
+            this.textBoxj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxj_KeyPress);
+            // 
+            // comboBoxj
+            // 
+            this.comboBoxj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxj.Font = new System.Drawing.Font("Arsenal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxj.FormattingEnabled = true;
+            this.comboBoxj.Location = new System.Drawing.Point(532, 619);
+            this.comboBoxj.Name = "comboBoxj";
+            this.comboBoxj.Size = new System.Drawing.Size(258, 34);
+            this.comboBoxj.TabIndex = 101;
+            this.comboBoxj.DataSourceChanged += new System.EventHandler(this.comboBoxj_DataSourceChanged);
+            // 
             // Zakaz2Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.comboBoxj);
+            this.Controls.Add(this.textBoxj);
             this.Controls.Add(this.textBox_fam);
             this.Controls.Add(this.button_vzakaz);
             this.Controls.Add(this.buttonAddvzakaz);
@@ -527,5 +555,7 @@
         private System.Windows.Forms.Button buttonAddvzakaz;
         private System.Windows.Forms.Button button_vzakaz;
         private System.Windows.Forms.TextBox textBox_fam;
+        private System.Windows.Forms.TextBox textBoxj;
+        private System.Windows.Forms.ComboBox comboBoxj;
     }
 }
