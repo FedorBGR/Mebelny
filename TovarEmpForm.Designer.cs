@@ -208,6 +208,7 @@
             this.textBox_id.Location = new System.Drawing.Point(613, 563);
             this.textBox_id.Multiline = true;
             this.textBox_id.Name = "textBox_id";
+            this.textBox_id.ReadOnly = true;
             this.textBox_id.Size = new System.Drawing.Size(258, 25);
             this.textBox_id.TabIndex = 22;
             // 

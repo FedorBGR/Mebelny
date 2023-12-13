@@ -19,7 +19,7 @@ namespace Mebelny
         {
             try
             {
-                msCommand.CommandText = @"SELECT id_zakaz AS 'Номер закзаа', id_tovar AS 'Код товара', client_name AS 'Имя клиента', client_surname AS 'Фамилия клиента', client_otch AS 'Отчество клиента', zakaz_cena AS 'Цена заказа', zakaz_col AS 'Общее количество товаров', id_empl AS 'Обслуживал сотрудник', zakaz_time AS 'Время заказа', zakaz_ztatus AS 'Статус' FROM zakazy";
+                msCommand.CommandText = @"SELECT id_zakaz AS 'Номер закзаа', id_tovar AS 'Код товара', client_name AS 'Имя клиента', client_surname AS 'Фамилия клиента', client_otch AS 'Отчество клиента', zakaz_cena AS 'Цена заказа, Руб.', zakaz_col AS 'Общее количество товаров, Шт.', id_empl AS 'Обслуживал сотрудник', zakaz_time AS 'Время заказа', zakaz_ztatus AS 'Статус' FROM zakazy";
                 dtZakaz.Clear();
                 msDataAdapter.SelectCommand = DBconnection.msCommand;
                 msDataAdapter.Fill(dtZakaz);
@@ -108,7 +108,7 @@ namespace Mebelny
         {
             try
             {
-                msCommand.CommandText = @"SELECT id_zakaz AS 'Номер закзаа', id_tovar AS 'Код товара', client_name AS 'Имя клиента', client_surname AS 'Фамилия клиента', client_otch AS 'Отчество клиента', zakaz_cena AS 'Цена заказа', zakaz_col AS 'Общее количество товаров', id_empl AS 'Обслуживал сотрудник', zakaz_time AS 'Время заказа', zakaz_ztatus AS 'Статус' FROM zakazy WHERE concat (id_zakaz) LIKE '" + zakazSearch + "' ";
+                msCommand.CommandText = @"SELECT id_zakaz AS 'Номер закзаа', id_tovar AS 'Код товара', client_name AS 'Имя клиента', client_surname AS 'Фамилия клиента', client_otch AS 'Отчество клиента', zakaz_cena AS 'Цена заказа, Руб.', zakaz_col AS 'Общее количество товаров, Шт', id_empl AS 'Обслуживал сотрудник', zakaz_time AS 'Время заказа', zakaz_ztatus AS 'Статус' FROM zakazy WHERE concat (id_zakaz) LIKE '" + zakazSearch + "' ";
                 dtZakaz.Clear();
                 msDataAdapter.SelectCommand = DBconnection.msCommand;
                 msDataAdapter.Fill(dtZakaz);
