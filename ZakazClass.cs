@@ -55,7 +55,7 @@ namespace Mebelny
             }
         }
 
-        static public bool addTovartoZakaz (int id_zakaz ,string id_tovar, int zakaz_cena, int zakaz_col)
+        static public bool addTovartoZakaz (int id_zakaz ,string id_tovar, int zakaz_cena, string zakaz_col)
         {
             string v = msCommand.CommandText = "SELECT id_tovar FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
             string b = msCommand.CommandText = "SELECT zakaz_cena FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
@@ -122,6 +122,33 @@ namespace Mebelny
         {
             try
             {
+                string a = "SELECT id_tovar FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
+                msCommand.CommandText = a;
+                var ares = msCommand.ExecuteNonQuery();
+                string aidtov = ares.ToString();
+                string [] id = aidtov.Split(';');
+                
+                string b = "SELECT zakaz_col FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
+                msCommand.CommandText = b;
+                var bres = msCommand.ExecuteNonQuery();
+                string bcol = bres.ToString();
+                string[] col = bcol.Split(';');
+
+                for (int i = 0; i < id.Length; i++)
+                { 
+                   
+                    
+                    int coli = int.Parse(col[i]);
+                    
+                    int idxz = int.Parse(id[i]);
+                    
+                    
+
+                    msCommand.CommandText = $"update tovar set tovar_col = tovar_col + {coli} where id_tovar = {idxz}";
+                    msCommand.ExecuteNonQuery();
+                }
+                
+
                 msCommand.CommandText = "DELETE FROM zakazy WHERE id_zakaz = '" + id_zakaz + "'";
                 msCommand.ExecuteNonQuery();
             }

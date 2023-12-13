@@ -40,6 +40,8 @@ namespace Mebelny
         private void TovarEmpForm_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            textBox_Search.Text = "Код или название товара";
+            textBox_Search.ForeColor = Color.Gray;
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized; 
@@ -93,6 +95,24 @@ namespace Mebelny
                 {
                     e.Handled = true;
                 }
+            }
+        }
+
+        private void textBox_Search_Enter(object sender, EventArgs e)
+        {
+            if (textBox_Search.Text == "Код или название товара")
+            {
+                textBox_Search.Text = "";
+                textBox_Search.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_Search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_Search.Text))
+            {
+                textBox_Search.Text = "Код или название товара";
+                textBox_Search.ForeColor = Color.Gray;
             }
         }
 

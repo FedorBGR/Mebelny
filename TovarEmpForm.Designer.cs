@@ -261,6 +261,8 @@
             this.textBox_Search.Name = "textBox_Search";
             this.textBox_Search.Size = new System.Drawing.Size(360, 34);
             this.textBox_Search.TabIndex = 37;
+            this.textBox_Search.Enter += new System.EventHandler(this.textBox_Search_Enter);
+            this.textBox_Search.Leave += new System.EventHandler(this.textBox_Search_Leave);
             // 
             // button1
             // 

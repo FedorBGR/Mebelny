@@ -62,7 +62,9 @@
             this.textBox_fam = new System.Windows.Forms.TextBox();
             this.comboBoxj = new System.Windows.Forms.ComboBox();
             this.textBoxj = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -86,13 +88,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.Location = new System.Drawing.Point(348, 208);
+            this.dataGridView1.Location = new System.Drawing.Point(325, 290);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1044, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(1044, 257);
             this.dataGridView1.TabIndex = 42;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox_id_zakaz
             // 
@@ -322,6 +325,8 @@
             this.textBox_Search.Name = "textBox_Search";
             this.textBox_Search.Size = new System.Drawing.Size(360, 34);
             this.textBox_Search.TabIndex = 64;
+            this.textBox_Search.Enter += new System.EventHandler(this.textBox_Search_Enter);
+            this.textBox_Search.Leave += new System.EventHandler(this.textBox_Search_Leave);
             // 
             // button_search
             // 
@@ -457,11 +462,26 @@
             this.textBoxj.TabIndex = 104;
             this.textBoxj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxj_KeyPress);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.Location = new System.Drawing.Point(325, 12);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1044, 254);
+            this.dataGridView2.TabIndex = 105;
+            // 
             // Zakaz1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.textBoxj);
             this.Controls.Add(this.comboBoxj);
             this.Controls.Add(this.textBox_fam);
@@ -501,6 +521,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Zakaz1Form_FormClosing);
             this.Load += new System.EventHandler(this.Zakaz1Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,5 +562,6 @@
         private System.Windows.Forms.TextBox textBox_fam;
         private System.Windows.Forms.ComboBox comboBoxj;
         private System.Windows.Forms.TextBox textBoxj;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

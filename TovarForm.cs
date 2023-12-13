@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Mebelny
 {
@@ -87,6 +88,8 @@ namespace Mebelny
             this.WindowState = FormWindowState.Maximized; 
             TovarClass.GetTovar();
             dataGridView1.DataSource = TovarClass.dtTovar;
+            textBox_Search.Text = "Код или название товара";
+            textBox_Search.ForeColor = Color.Gray;
         }
 
 
@@ -148,6 +151,34 @@ namespace Mebelny
             }
         }
 
+        private void textBox_Search_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox_Search_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox_Search_Enter(object sender, EventArgs e)
+        {
+            if (textBox_Search.Text == "Код или название товара")
+            {
+                textBox_Search.Text = "";
+                textBox_Search.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_Search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_Search.Text))
+            {
+                textBox_Search.Text = "Код или название товара";
+                textBox_Search.ForeColor = Color.Gray;
+            }
+        }
+
         private void button_search_Click(object sender, EventArgs e)
         {
             try
@@ -160,7 +191,7 @@ namespace Mebelny
                     if (dataGridView1.RowCount == 0)
                     {
                          MessageBox.Show("Совпадений не найдено, возможно вы допустили ошибку", "Товар не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox_Search.Text = "";
+                        
                         TovarClass.GetTovar();
                     }
                     

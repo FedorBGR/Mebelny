@@ -87,7 +87,7 @@ namespace Mebelny
         {
             try
             {
-                msCommand.CommandText = @"SELECT id_tovar AS 'Код товара', tovar_name AS 'Наименование', tovar_col AS 'Количество, Шт.', tovar_cena AS 'Цена, Руб.', tovar_postav AS 'Поставщик' FROM tovar WHERE concat (tovar_name, tovar_postav) LIKE '%" + tovarSearch + "%'";
+                msCommand.CommandText = @"SELECT id_tovar AS 'Код товара', tovar_name AS 'Наименование', tovar_col AS 'Количество, Шт.', tovar_cena AS 'Цена, Руб.', tovar_postav AS 'Поставщик' FROM tovar WHERE concat (tovar_name, id_tovar) LIKE '%" + tovarSearch + "%'";
                 dtTovar.Clear();
                 msDataAdapter.SelectCommand = DBconnection.msCommand;
                 msDataAdapter.Fill(dtTovar);

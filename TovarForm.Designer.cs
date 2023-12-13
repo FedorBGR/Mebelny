@@ -77,6 +77,10 @@
             this.textBox_Search.Name = "textBox_Search";
             this.textBox_Search.Size = new System.Drawing.Size(360, 34);
             this.textBox_Search.TabIndex = 2;
+            this.textBox_Search.Enter += new System.EventHandler(this.textBox_Search_Enter);
+            this.textBox_Search.Leave += new System.EventHandler(this.textBox_Search_Leave);
+            this.textBox_Search.MouseEnter += new System.EventHandler(this.textBox_Search_MouseEnter);
+            this.textBox_Search.MouseLeave += new System.EventHandler(this.textBox_Search_MouseLeave);
             // 
             // label1
             // 

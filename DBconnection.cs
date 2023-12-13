@@ -12,7 +12,7 @@ namespace Mebelny
     {
         static string DBconnect = "server = localhost; user = root; password = root; database = mebel";
         static public MySqlDataAdapter msDataAdapter;
-        static MySqlConnection myconnect;
+        static public MySqlConnection myconnect;
         static public MySqlCommand msCommand;
 
 

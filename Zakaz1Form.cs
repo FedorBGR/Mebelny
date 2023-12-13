@@ -21,6 +21,7 @@ namespace Mebelny
         private void ReloadForm()
         {
             ZakazClass.GetZakaz();
+            TovarClass.GetTovar();
             dataGridView1.DataSource = ZakazClass.dtZakaz;
             textBox_cena_zakaza.Text = "";
             textBox_client_name.Text = "";
@@ -75,7 +76,10 @@ namespace Mebelny
 
         private void Zakaz1Form_Load(object sender, EventArgs e)
         {
+            textBox_Search.Text = "Номер заказа";
+            textBox_Search.ForeColor = Color.Gray;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             textBoxj.Visible = false;
             comboBoxj.Visible = false;
             buttonAddvzakaz.Enabled = false;
@@ -89,6 +93,8 @@ namespace Mebelny
             ZakazClass.GetZakaz();
             dataGridView1.DataSource = ZakazClass.dtZakaz;
             buttonAddvzakaz.Enabled = false;
+            TovarClass.GetTovar();
+            dataGridView2.DataSource = TovarClass.dtTovar;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -114,21 +120,20 @@ namespace Mebelny
             }
             if (comboBox_id_tovar.Text != "" && textBox_client_name.Text != "" && textBox_client_surname.Text != "" && textBox_client_otch.Text != "" && textBox_zakaz_col.Text != "" && textBox_fam.Text != "" && comboBox_satus.Text != "")
             {
-
                 int y = Convert.ToInt32(textBox_zakaz_col.Text);
 
-                if (Convert.ToInt32(resultcoldo) > y)
-                    
-                    {
-                    int k = Convert.ToInt32(textBox_zakaz_col.Text);
+                if (Convert.ToInt32(resultcoldo) >= y)
+                {
+
                     if (ZakazClass.addZakaz(comboBox_id_tovar.Text, textBox_client_name.Text, textBox_client_surname.Text, textBox_client_otch.Text, Convert.ToInt32(textBox_cena_zakaza.Text), Convert.ToInt32(textBox_zakaz_col.Text), textBox_fam.Text, comboBox_satus.Text))
                     {
-                        int col_col = Convert.ToInt32(resultcoldo) - k;
+                        int col_col = Convert.ToInt32(resultcoldo) - y;
                         string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBox_id_tovar.Text + "'";
                         DBconnection.msCommand.CommandText = Obnovtov;
                         Object resultobnov = DBconnection.msCommand.ExecuteScalar();
                         MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ZakazClass.GetZakaz();
+                        TovarClass.GetTovar();
 
 
                         textBox_cena_zakaza.Text = "";
@@ -142,7 +147,6 @@ namespace Mebelny
                     else
                     {
                         MessageBox.Show("Товар не был добавлен!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
                     }
 
 
@@ -151,7 +155,6 @@ namespace Mebelny
                 else
                 {
                     MessageBox.Show("Товара на складе едостаточно", "Товара недостаточно", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
                 }
 
             }
@@ -161,7 +164,7 @@ namespace Mebelny
             }
         }
 
-        static public string Idzakaz, Idtovar, ClientName, ClientSurname, ClientOthc, CenaZakaz, ZakazCol, IdEmpl, ZakazStatus;
+            static public string Idzakaz, Idtovar, ClientName, ClientSurname, ClientOthc, CenaZakaz, ZakazCol, IdEmpl, ZakazStatus;
 
         private void button_hide_Click(object sender, EventArgs e)
         {
@@ -223,8 +226,8 @@ namespace Mebelny
                 int z = x * y;
                 textBox_cena_zakaza.Text = z.ToString();
 
-                int colvo = Convert.ToInt32(result3);
-                int colvo_posle = colvo + j;
+                string colvo = result3.ToString();
+                string colvo_posle = colvo + ";" + textBoxj.Text;
                 textBox_zakaz_col.Text = colvo_posle.ToString();
 
                 int price2 = Convert.ToInt32(result2);
@@ -248,15 +251,15 @@ namespace Mebelny
                     if (Convert.ToInt32(resultcoldo) > j)
                     {
                         
-                        if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), int.Parse(textBox_zakaz_col.Text)))
+                        if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), textBox_zakaz_col.Text))
                         {
                             int col_col = Convert.ToInt32(resultcoldo) - j;
-                            string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBox_id_tovar.Text + "'";
+                            string Obnovtov = @"UPDATE tovar SET tovar_col = '" + col_col + "' WHERE id_tovar = '" + comboBoxj.Text + "'";
                             DBconnection.msCommand.CommandText = Obnovtov;
                             Object resultobnov = DBconnection.msCommand.ExecuteScalar();
                             MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ZakazClass.GetZakaz();
-
+                            TovarClass.GetTovar();
 
                             textBox_cena_zakaza.Text = "";
                             comboBox_id_tovar.Text = "";
@@ -286,7 +289,7 @@ namespace Mebelny
             }
             else
             {
-                if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), int.Parse(textBox_zakaz_col.Text)))
+                if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), textBox_zakaz_col.Text))
                 {
                     int j = Convert.ToInt32(textBoxj.Text);
                     if (Convert.ToInt32(resultcoldo) > j)
@@ -297,6 +300,7 @@ namespace Mebelny
                         Object resultobnov = DBconnection.msCommand.ExecuteScalar();
                         MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ZakazClass.GetZakaz();
+                        TovarClass.GetTovar();
 
 
                         textBox_cena_zakaza.Text = "";
@@ -322,7 +326,7 @@ namespace Mebelny
                     if (textBox_id_zakaz.Text != "" && comboBox_id_tovar.Text != "" && textBox_cena_zakaza.Text != "" && textBox_zakaz_col.Text != "")
                     {
                         Idzakaz = textBox_id_zakaz.Text;
-                        if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), int.Parse(textBox_zakaz_col.Text)))
+                        if (ZakazClass.addTovartoZakaz(int.Parse(textBox_id_zakaz.Text), comboBox_id_tovar.Text, int.Parse(textBox_cena_zakaza.Text), textBox_zakaz_col.Text))
                         {
                             int j = Convert.ToInt32(textBoxj.Text);
                             if (Convert.ToInt32(resultcoldo) > j)
@@ -333,7 +337,7 @@ namespace Mebelny
                                 Object resultobnov = DBconnection.msCommand.ExecuteScalar();
                                 MessageBox.Show("Товар успешно добавлен в базу.", "Товар внесен", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ZakazClass.GetZakaz();
-
+                                TovarClass.GetTovar();
 
                                 textBox_cena_zakaza.Text = "";
                                 comboBox_id_tovar.Text = "";
@@ -424,6 +428,29 @@ namespace Mebelny
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox_Search_Enter(object sender, EventArgs e)
+        {
+            if (textBox_Search.Text == "Номер заказа")
+            {
+                textBox_Search.Text = "";
+                textBox_Search.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_Search_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_Search.Text))
+            {
+                textBox_Search.Text = "Номер заказа";
+                textBox_Search.ForeColor = Color.Gray;
+            }
+        }
+
         private void button_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -463,6 +490,7 @@ namespace Mebelny
                         MessageBox.Show("Номер заказа не обнаружен", "Товар не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         textBox_Search.Text = "";
                         ZakazClass.GetZakaz();
+                        TovarClass.GetTovar();
                     }
 
 
@@ -498,6 +526,7 @@ namespace Mebelny
                     {
                         MessageBox.Show("Данные заказа успешно изменены", "Данные изменены", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ZakazClass.GetZakaz();
+                        TovarClass.GetTovar();
                         textBox_cena_zakaza.Text = "";
                         comboBox_id_tovar.Text = "";
                         textBox_client_name.Text = "";
@@ -524,6 +553,7 @@ namespace Mebelny
                     {
                     MessageBox.Show("Данные заказа успешно изменены", "Данные изменены", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ZakazClass.GetZakaz();
+                    TovarClass.GetTovar();
                     textBox_cena_zakaza.Text = "";
                     comboBox_id_tovar.Text = "";
                     textBox_client_name.Text = "";
@@ -550,6 +580,7 @@ namespace Mebelny
                         {
                             MessageBox.Show("Данные заказа успешно изменены", "Данные изменены", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ZakazClass.GetZakaz();
+                            TovarClass.GetTovar();
                             textBox_cena_zakaza.Text = "";
                             comboBox_id_tovar.Text = "";
                             textBox_client_name.Text = "";
