@@ -34,6 +34,7 @@
             this.button_zakazy = new System.Windows.Forms.Button();
             this.button_hide = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
+            this.buttonPers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -112,11 +113,26 @@
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
+            // buttonPers
+            // 
+            this.buttonPers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPers.FlatAppearance.BorderSize = 0;
+            this.buttonPers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPers.Font = new System.Drawing.Font("Arsenal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPers.Location = new System.Drawing.Point(63, 208);
+            this.buttonPers.Name = "buttonPers";
+            this.buttonPers.Size = new System.Drawing.Size(155, 45);
+            this.buttonPers.TabIndex = 99;
+            this.buttonPers.Text = "Персонал";
+            this.buttonPers.UseVisualStyleBackColor = true;
+            this.buttonPers.Click += new System.EventHandler(this.buttonPers_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 276);
+            this.Controls.Add(this.buttonPers);
             this.Controls.Add(this.button_hide);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.button_zakazy);
@@ -140,5 +156,6 @@
         private System.Windows.Forms.Button button_zakazy;
         private System.Windows.Forms.Button button_hide;
         private System.Windows.Forms.Button button_close;
+        private System.Windows.Forms.Button buttonPers;
     }
 }

@@ -60,5 +60,12 @@ namespace Mebelny
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void buttonPers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PersinalForm Pers = new PersinalForm();
+            Pers.Show();
+        }
     }
 }
